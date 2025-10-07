@@ -1,0 +1,226 @@
+.Profile {
+  padding: 0%;
+  margin: 0%;
+}
+
+.Profile span {
+  color: #1b1b1b !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+
+}
+
+[data-theme-version="dark"] .Profile span {
+  color: white !important;
+}
+
+.Profile ul li {
+  color: #1b1b1b !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8em !important;
+  font-weight: 400 !important;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+
+}
+
+[data-theme-version="dark"] .Profile ul li {
+  color: white !important;
+}
+
+.Profile label {
+  color: #1b1b1b !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em !important;
+  font-weight: 500 !important;
+
+}
+
+[data-theme-version="dark"] .Profile label {
+  color: white !important;
+}
+
+.Personal span {
+  color: #1b1b1b !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8em !important;
+  font-weight: 400 !important;
+
+}
+
+[data-theme-version="dark"] .Profile span {
+  color: white !important;
+}
+
+
+
+
+/* for custom input  */
+.file-upload-label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 4px 8px;
+  background: var(--primary);
+}
+
+.file-upload-label:hover {
+  color: #0056b3;
+}
+
+.file-upload-label svg {
+  transition: all 0.3s ease;
+}
+
+.file-upload-label:hover svg {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+.profile-setting,
+.profilePhoto,
+.profileDetails {
+  padding: 20px !important;
+  min-height: 206px;
+}
+
+.profile-setting .card {
+  margin-bottom: 0;
+}
+
+.profile-setting h2 {
+  margin-bottom: 20px !important;
+}
+
+.profile-setting .profileSettingTitle {
+  font-size: 13px !important;
+  margin-bottom: 8px !important;
+  display: block;
+}
+
+.profile-setting .profileSettinglink {
+  font-size: 14px !important;
+  padding: 6px 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 8px !important;
+  transition: all 0.5s;
+  color: #fff;
+  width: 100%;
+}
+
+.profile-setting .profileSettinglink:hover {
+  background: var(--primary);
+}
+
+.profile-setting .profileSettinglinkActive {
+  background: var(--primary);
+}
+
+.profileDetails span {
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+.profileDetails label {
+  margin-bottom: 4px;
+}
+
+.profilePhoto .btn {
+  font-size: 16px !important;
+  padding: 6px 10px !important;
+  border-radius: 25px !important;
+  margin-bottom: 12px !important;
+}
+
+
+
+
+
+[data-theme-version="dark"] span.profileSettingTitle {
+  color: #AAAAAA !important;
+}
+
+
+[data-theme-version="dark"] .profileDetails label {
+  color: #AAAAAA !important;
+
+}
+
+[data-theme-version="dark"] .profileDetails span {
+  color: #fff !important;
+}
+
+
+
+
+/* styles (light theme) */
+[data-theme-version="light"] span.profileSettingTitle {
+  color: #333 !important;
+}
+
+[data-theme-version="light"] .profileDetails label {
+  color: #333 !important;
+}
+
+[data-theme-version="light"] .profileDetails span {
+  color: #000 !important;
+}
+
+[data-theme-version="light"] .profile-setting .profileSettinglink:hover {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+[data-theme-version="light"] .profile-setting .profileSettinglinkActive {
+  background: var(--primary);
+  color: #fff !important;
+
+}
+
+[data-theme-version="light"] .profile-setting .profileSettinglink {
+  color: #000;
+}
+
+.shimmer-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+      #e0e0e0 0%,
+      #f8f8f8 50%,
+      #e0e0e0 100%);
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .margin-27 {
+    margin-top: -27px;
+  }
+}

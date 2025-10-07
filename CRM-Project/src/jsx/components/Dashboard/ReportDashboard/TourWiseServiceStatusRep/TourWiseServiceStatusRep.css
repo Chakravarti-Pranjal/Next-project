@@ -1,0 +1,154 @@
+/* Inputs-feilds */
+
+.tour-wise-services-status-rep-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+.tour-wise-services-status-rep-main-inputs-paramtr {
+    padding: 20px 10px 20px 0px;
+    width: 70%;
+}
+
+.tour-wise-services-status-rep-main-inputs-paramtr-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.tour-wise-services-status-rep-main-inputs-paramtr-flex-slct {
+    width: 14%;
+}
+
+@media only screen and (min-width:750px) and (max-width:1200px) {
+    .tour-wise-services-status-rep-main-inputs-paramtr-flex-slct {
+        width: 40%;
+    }
+
+    .tour-wise-services-status-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+
+    }
+
+    .tour-wise-services-status-rep-main-inputs-results {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tour-wise-services-status-rep-main-inputs-results-con {
+        width: 7rem;
+    }
+
+}
+
+@media only screen and (max-width:749px) { 
+    .tour-wise-services-status-rep-main-inputs-paramtr-flex-slct {
+        width: 70%;
+    }
+
+    .tour-wise-services-status-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    
+    .tour-wise-services-status-rep-main-inputs-paramtr {
+        width: 80%;
+    }
+
+    .tour-wise-services-status-rep-main-inputs-paramtr {
+        width: 70%;
+        padding: 20px 10px 20px 60px;
+    }
+
+    
+    .tour-wise-services-status-rep-main-inputs-results {
+        flex-direction: column;
+    }
+
+    .tour-wise-services-status-rep-main-inputs-results-con {
+        width: 7rem;
+    }
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+.tour-wise-services-status-rep-main-inputs-paramtr-flex-slct input {
+    color-scheme: dark;
+  }
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+
+/* tour-wise-services-status-rep-main-inputs-results */
+
+.tour-wise-services-status-rep-main-inputs-results {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 2px;
+
+}
+
+.tour-wise-services-status-rep-main-inputs-results p {
+    padding: 0;
+    margin: 0;
+}
+
+.tour-wise-services-status-rep-main-inputs-results-ser {
+    background-color: hsl(195, 72%, 52%);
+    color: white;
+    box-sizing: border-box;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 4px 0px 4px;
+
+}
+
+.tour-wise-services-status-rep-main-inputs-results-con {
+    background-color: #11B76C;
+    color: white;
+    box-sizing: border-box;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 4px 0px 4px;
+
+}
+
+.tour-wise-services-status-rep-main-inputs-results-vouch {
+    background-color: #780CAC;
+    color: white;
+    box-sizing: border-box;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 4px 0px 4px;
+}

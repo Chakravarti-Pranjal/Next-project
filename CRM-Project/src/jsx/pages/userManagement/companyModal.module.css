@@ -1,0 +1,92 @@
+.customModal {
+  max-width: 60vw !important;
+  width: 80vw !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  position: fixed !important;
+}
+
+/* companyModal.module.css */
+
+.tableContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 11px; /* Smaller font size */
+  font-weight: 300; /* Thinner text */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid #333;
+  font-weight: 300; /* Thinner font */
+  vertical-align: top;
+}
+
+.table th {
+  background-color: #111;
+}
+
+.table tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.table tr:hover {
+  background-color: #333;
+}
+
+[data-theme-version="light"] .table {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+[data-theme-version="light"] .table th {
+  background-color: #f1f1f1;
+  color: #222222;
+  font-weight: 600;
+  border-color: #ccc;
+}
+
+[data-theme-version="light"] .table td {
+  color: #333333;
+  border-color: #ccc;
+}
+
+[data-theme-version="light"] .table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+[data-theme-version="light"] .table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+[data-theme-version="light"] .table tr:hover {
+  background-color: #e6e6e6;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.vehicle-details .modal-content {
+  max-height: calc(100vh - 3.5rem) !important;
+  width: auto !important;
+  box-shadow: 0px 0px 8px 0px #0a0909 !important;
+}
+
+.vehicle-details .modal-dialog {
+  max-width: fit-content !important;
+}
+
+.vehicle-details .modal-body {
+  overflow-y: auto !important;
+}

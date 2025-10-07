@@ -1,0 +1,59 @@
+.first-shimmer-box{
+    height: 20px;
+    width: 250px;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);
+    border-radius: 2px;
+}
+.second-shimmer-box{
+    height: 40px;
+    width: 80px;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);
+    border-radius: 5px;
+}
+.third-shimmer-box{
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);
+    border-radius: 2px;
+}
+.fourth-shimmer-box{
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);;
+    border-radius: 2px;
+}
+.fivth-shimmer-box{
+    width: 60%;
+    height: 30px;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);
+    border-radius: 2px;
+}
+.shimmer {
+    position: relative;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+.bg-shimmer{
+    position: relative;
+    background: linear-gradient(to right, #bdbdbd 0%, #b0aeae 50%, #c1c1c1 100%);
+    /* background: rgb(145, 145, 145); */
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+
+}
+
+.first-shimmer-box,.second-shimmer-box,.third-shimmer-box,.fourth-shimmer-box,.fivth-shimmer-box{
+    position: relative;
+    background: linear-gradient(to right, #e0e0e0 0%, #e1dede 50%, #e9e7e7 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}

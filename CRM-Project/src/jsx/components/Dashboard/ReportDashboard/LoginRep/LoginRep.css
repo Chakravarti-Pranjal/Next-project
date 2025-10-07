@@ -1,0 +1,131 @@
+/* Inputs-feilds */
+
+.login-rep-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+.login-rep-main-inputs-search {
+    width: 15%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 20px;
+}
+
+.login-rep-main-inputs-search input {
+    background-color: #222;
+    color: #6E6E6E;
+    border: 1px solid #555;
+    padding: 8px
+}
+
+.login-rep-main-inputs-search-inp {
+    border-radius: 5px;
+    /* height: 29px; */
+    /* padding: 1px; */
+}
+
+.login-rep-main-inputs-paramtr {
+    width: 85%;
+    padding: 20px 10px 20px 60px;
+}
+
+.login-rep-main-inputs-paramtr-flex {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    /* flex-wrap: wrap; */
+    width: 100%;
+}
+
+.login-rep-main-inputs-paramtr-flex-slct {
+    width: 30%;
+}
+
+@media only screen and (min-width: 801px) and (max-width:1200px) {
+    .login-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .login-rep-main-inputs-paramtr-flex-slct {
+        width: 40%;
+    }
+
+    .login-rep-main-inputs-search {
+        width: 25%;
+    }
+
+    .login-rep-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:800px) {
+    .login-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .login-rep-main-inputs-paramtr-flex-slct {
+        width: 70%;
+    }
+
+    .login-rep-main-inputs-search {
+        width: 30%;
+    }
+
+    .login-rep-main-inputs-paramtr {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:599px) {
+    .login-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .login-rep-main-inputs-paramtr-flex-slct {
+        width: 100%;
+    }
+
+    .login-rep-main-inputs-search {
+        width: 30%;
+    }
+
+    .login-rep-main-inputs-paramtr {
+        width: 70%;
+    }
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    height: 35px;
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+.login-rep-main-inputs-paramtr-flex-slct input {
+    color-scheme: dark;
+
+}
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-Up Costsheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color:  #e23428;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  
+  <button onclick="openPopup()">Open Costsheet</button>
+
+  <script>
+    function openPopup() {
+
+      window.open(
+        'index.html',
+        'PopupWindow',
+        'width=80%,height=100%,top=100,left=100' 
+      );
+    }
+  </script>
+</body>
+</html>

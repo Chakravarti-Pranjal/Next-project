@@ -1,0 +1,83 @@
+/* buttons */
+
+.agentTurnover-main-downld-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.agentTurnover-main-downld-btns-copy {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff2802 ;
+    border-radius: 5px;
+    padding: 2px 2px 2px 5px;
+}
+
+.agentTurnover-main-downld-btns-copy {
+    cursor: pointer ;
+    background-color: #ff2802 ;
+}
+
+.agentTurnover-btn {
+    background-color: #ff2802;
+    color: #ffffff;
+    padding: 2px 2px 2px 2px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+
+}
+
+
+.data-table-wrapper .rdt_TableRow {
+    background-color: #111;
+    /* color: #fff; */
+    /* transition: background-color 0.3s ease-in-out; */
+}
+
+.data-table-wrapper .rdt_TableRow:hover {
+    background-color: #444 !important; /* Force gray background */
+
+}
+
+
+.data-table-wrapper:hover {
+    background-color: #444 !important;
+}
+
+
+
+
+/* Light mode: table container */
+[data-theme-version="light"] .rdt_Table {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+/* Light mode: table header cells */
+[data-theme-version="light"] .rdt_TableHead .rdt_TableCol {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+}
+
+/* Light mode: table rows (odd and even) */
+[data-theme-version="light"] .rdt_TableBody .rdt_TableRow {
+  background-color: #f9f9f9 !important;
+  color: #333 !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Light mode: table row hover */
+[data-theme-version="light"] .rdt_TableBody .rdt_TableRow:hover {
+  background-color: #e0e0e0 !important;
+  color: #000 !important;
+}
+
+/* Light mode: pagination */
+[data-theme-version="light"] .rdt_Pagination {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+}

@@ -1,0 +1,422 @@
+.cardContainer {
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #1e1e1e;
+  /* width: 95% !important; */
+  border-radius: 0.25rem;
+  padding: 0 !important;
+}
+
+.serviceCard {
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background-color: #2a2a2a;
+}
+
+.serviceHead {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #333 0%, #555 100%);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.supplierInfo,
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.supplierName,
+.paymentTerms {
+  margin: 0;
+  font-size: 0.8rem !important;
+  color: #ddd;
+}
+.supplierDetails{
+  font-size: 0.8rem !important;
+  color: #fff;
+}
+
+.supplierText {
+  margin: 0;
+  font-size: 1.1rem !important;
+  font-weight: 700;
+  color: #bd241a;
+  width: 100%;
+}
+
+.paymentText {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.reservationButtonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.reservationButton {
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.reservationButton:hover {
+  background-color: #0056b3;
+}
+
+.serviceBody {
+  padding: 0.5rem;
+  background-color: #2a2a2a;
+}
+
+.tableContainer {
+  width: 100%;
+}
+
+.serviceTable {
+  font-size: 0.75rem;
+  background-color: #333;
+  border-color: #444;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.serviceTable tbody tr td {
+  width: 10%;
+  text-align: left;
+}
+
+.tableCell {
+  padding: 0.15rem 0.3rem !important;
+  font-size: 0.75rem;
+  color: #ddd;
+  border-color: #444;
+  vertical-align: middle;
+  width: 10%;
+}
+
+.tableCell span {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.statusSelect {
+  padding: 0.15rem;
+}
+
+/* .statusDropdown {
+  width: 100%;
+  height: 25px;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+  background-color: #2e2e40;
+  color: #fff;
+  border: 1px solid #555;
+} */
+
+/* .statusDropdown option {
+  background-color: #2e2e40;
+  color: #fff;
+} */
+
+.dateRoomInfo {
+  display: flex;
+  align-items: center;
+  padding: 0.15rem 0.3rem;
+}
+
+.dateRoomInfo span {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.specialRequest {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.requestInput {
+  width: 15rem;
+  height: 25px;
+  font-size: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  background-color: #444;
+  color: #fff;
+}
+
+.requestInput::placeholder {
+  color: #aaa;
+}
+
+.confirmationSection {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 0.2rem;
+}
+
+.confirmationRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: end;
+}
+
+.confirmationField {
+  /* flex: 1; */
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirmationField label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ddd;
+  margin-bottom: 0.2rem;
+}
+
+.confirmationField span {
+  font-size: 0.8rem;
+  color: #fff;
+  margin: 4.5px 4px;
+}
+
+.formInput {
+  width: 100%;
+  height: 25px;
+  font-size: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  background-color: #2e2e40;
+  color: #fff;
+}
+
+.formInput::placeholder {
+  color: #aaa;
+}
+
+.formTextarea {
+  width: 100%;
+  height: 50px;
+  font-size: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  background-color: #2e2e40;
+  color: #fff;
+  resize: none;
+}
+
+.formTextarea::placeholder {
+  color: #aaa;
+}
+
+.datePicker {
+  width: 100%;
+  height: 25px;
+  font-size: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  background-color: #2e2e40;
+  color: #fff;
+}
+
+.datePicker::placeholder {
+  color: #aaa;
+}
+
+.timePicker {
+  width: 100%;
+  height: 25px;
+  font-size: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  background-color: #2e2e40;
+  color: #fff;
+}
+
+.timePicker::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  align-self: flex-end;
+}
+
+.editButton,
+.cancelButton,
+.saveButton {
+  height: 25px;
+  width: 50px;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.editButton,
+.saveButton {
+  background-color: #6e6e6e;
+  color: #fff;
+  border: none;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.editButton:hover,
+.saveButton:hover {
+  background-color: #6e6e6e;
+}
+
+.cancelButton:hover {
+  background-color: #c82333;
+}
+
+
+/* Dark Theme */
+[data-theme-version="dark"] .cardContainer {
+  background-color: #1e1e1e;
+}
+[data-theme-version="dark"] .serviceCard {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+}
+[data-theme-version="dark"] .serviceHead {
+  background: linear-gradient(135deg, #333 0%, #555 100%);
+}
+[data-theme-version="dark"] .supplierName,
+[data-theme-version="dark"] .paymentTerms,
+[data-theme-version="dark"] .confirmationField label {
+  color: #AAAAAA !important;
+}
+[data-theme-version="dark"] .supplierDetails{
+  color: #fff;
+}
+[data-theme-version="dark"] .supplierText {
+  color: #bd241a;
+}
+[data-theme-version="dark"] .paymentText,
+[data-theme-version="dark"] .confirmationField span,
+[data-theme-version="dark"] .tableCell span,
+[data-theme-version="dark"] .dateRoomInfo span {
+  color: #fff;
+}
+[data-theme-version="dark"] .serviceBody,
+[data-theme-version="dark"] .confirmationSection {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+}
+[data-theme-version="dark"] .serviceTable {
+  background-color: #333;
+  border-color: #444;
+}
+[data-theme-version="dark"] .tableCell {
+  color: #ddd;
+  border-color: #444;
+}
+[data-theme-version="dark"] .requestInput,
+[data-theme-version="dark"] .formInput,
+[data-theme-version="dark"] .formTextarea,
+[data-theme-version="dark"] .datePicker,
+[data-theme-version="dark"] .timePicker,
+[data-theme-version="dark"] .statusDropdown {
+  background-color: #2e2e40;
+  color: #fff;
+  border: 1px solid #555;
+}
+[data-theme-version="dark"] .requestInput::placeholder,
+[data-theme-version="dark"] .formInput::placeholder,
+[data-theme-version="dark"] .formTextarea::placeholder,
+[data-theme-version="dark"] .datePicker::placeholder {
+  color: #aaa;
+}
+
+/* Light Theme */
+[data-theme-version="light"] .cardContainer {
+  background-color: #ffffff;
+}
+[data-theme-version="light"] .serviceCard {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+[data-theme-version="light"] .serviceHead {
+  background: linear-gradient(135deg, #eaeaea 0%, #f5f5f5 100%);
+}
+[data-theme-version="light"] .supplierName,
+[data-theme-version="light"] .paymentTerms,
+[data-theme-version="light"] .confirmationField label {
+  color: #333 !important;
+}
+[data-theme-version="light"] .supplierDetails{
+  color: #000;
+}
+[data-theme-version="light"] .supplierText {
+  color: #bd241a;
+}
+[data-theme-version="light"] .paymentText,
+[data-theme-version="light"] .confirmationField span,
+[data-theme-version="light"] .tableCell span,
+[data-theme-version="light"] .dateRoomInfo span {
+  color: #111;
+}
+[data-theme-version="light"] .serviceBody,
+[data-theme-version="light"] .confirmationSection {
+  background-color: #fff;
+  border: 1px solid #ddd;
+
+}
+[data-theme-version="light"] .serviceTable {
+  background-color: #f1f1f1;
+  border-color: #ddd;
+}
+[data-theme-version="light"] .tableCell {
+  color: #333;
+  border-color: #ddd;
+}
+[data-theme-version="light"] .requestInput,
+[data-theme-version="light"] .formInput,
+[data-theme-version="light"] .formTextarea,
+[data-theme-version="light"] .datePicker,
+[data-theme-version="light"] .timePicker,
+[data-theme-version="light"] .statusDropdown {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+[data-theme-version="light"] .requestInput::placeholder,
+[data-theme-version="light"] .formInput::placeholder,
+[data-theme-version="light"] .formTextarea::placeholder,
+[data-theme-version="light"] .datePicker::placeholder {
+  color: #999;
+}
+
+

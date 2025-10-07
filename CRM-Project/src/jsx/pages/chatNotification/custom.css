@@ -1,0 +1,6 @@
+/* chatbox */
+.chatbox.chatboxNotification{
+    display: block;
+    position: static !important;
+    width: 100%;
+}

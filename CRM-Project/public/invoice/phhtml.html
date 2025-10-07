@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <style>
+        @media print {
+            @page {
+                size: A5;
+                margin: 0;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        html {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body
+    style="word-wrap: break-word; line-height: 1.1; font-family: 'Times New Roman', serif; font-size: 0.875rem; line-height: 1.5; margin: 0; padding: 10px;">
+    <table
+        style="width: 100%; font-family: 'Times New Roman', serif; font-size: 0.875rem; border-collapse: collapse; max-width: 841px; margin: 0 auto;">
+        <tr>
+            <td align="left" style=" vertical-align: top;">
+                <img src="logo68.png" alt="Indo Asia Logo" style="display: block; margin-bottom: 20px;">
+                <div><strong>Voucher No. :</strong>{{ VoucherNo }}&nbsp;&nbsp;&nbsp;&nbsp; <strong>Dated :</strong> {{
+                    VoucherDate }}
+                </div>
+                <div><strong>Ref. No. :</strong> {{ ReferenceId }}</div>
+                <br>
+                <div><strong>{{ Suppliername }}</strong></div>
+                <div>{{ Address }}</div>
+                <div> Tel : - {{ Phone }}.</div>
+            </td>
+            <!-- <td align="right" style="width: 80px; vertical-align: top;"><img src="{{ CompanyLogoImageData }}" alt="{{ COMPANYNAME }}" style="width: auto; height: auto; display: block;"></td> -->
+            <td align="right" style="vertical-align: top;"><img src="voucher-logo350.png" alt="Indo Asia Logo"
+                    style="display: block;"></td>
+        </tr>
+    </table>
+    <table
+        style="width: 100%; font-family: 'Times New Roman', serif; font-size: 0.875rem; max-width: 841px; margin: 0 auto;">
+        <tr>
+            <td style="padding: 2px 0;">
+                <strong>For :</strong> Ms. {{ ClientName }} &nbsp;&nbsp; <strong>x {{ TotalPax }}</strong>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 2px 0;">
+                Please provide services as per details below.
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 2px 0;">
+                {{ Date }} &nbsp;&nbsp;&nbsp; : {{ Destination }} -{{ ServiceName }}
+        </tr>
+    </table>
+    <table
+        style="width: 100%; font-family: 'Times New Roman', serif; font-size: 0.875rem; max-width: 841px; margin: 0 auto;">
+        <tr style="height: 20px;"></tr>
+        <tr>
+            <td>
+                <strong>Arrival On :</strong> {{ ArrivalOn }}
+            </td>
+            <td>
+                <strong>At :</strong> {{ ArrivalAt }}
+            </td>
+            <td>
+                <strong>By :</strong> {{ ArrivalBy }}
+            </td>
+            <td>
+                <strong>From :</strong> {{ Fromdestination }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 2px 0;">
+                <strong>Departure On :</strong> {{ DepartureOn }}
+            </td>
+            <td>
+                <strong>At :</strong> {{ DepartureAt }}
+            </td>
+            <td>
+                <strong>By :</strong> {{ DepartureBy }}
+            </td>
+            <td>
+                <strong>To :</strong> {{ ToDestination }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top: 4px;">
+                Please bill us for the above mentioned services and collect all extras directly.
+            </td>
+        </tr>
+    </table>
+    <table
+        style="width: 100%; table-layout: fixed; border-collapse: collapse; font-family: 'Times New Roman', serif; font-size: 0.875rem; max-width: 841px; margin: 0 auto;">
+        <tr>
+            <td
+                style="text-align: right; word-break: break-all; font-size: 0.875rem; font-family: 'Times New Roman', serif;">
+                <strong>Authorised Signatory</strong><br><br>
+                <strong>{{ AuthorisedName }}</strong>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

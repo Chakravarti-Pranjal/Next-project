@@ -1,0 +1,212 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+ 
+  .text-center {
+    text-align: center;
+  }
+  
+  .d-inline-block {
+    display: inline-block;
+  }
+  
+  .me-2 {
+    margin-right: 0.5rem;
+  }
+  
+
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  
+  .bg-danger {
+    background-color: #dc3545 !important;
+  }
+  
+  .bg-success {
+    background-color: #28a745 !important;
+  }
+  
+  .bg-info {
+    background-color: #17a2b8 !important;
+  }
+  
+  .bg-warning {
+    background-color: #ffc107 !important;
+  }
+  
+  .list-group-item {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  
+  .btn {
+    padding: 10px 15px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-outline-secondary {
+    border-color: #6c757d;
+  }
+  
+  
+  .card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .embed-responsive::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; 
+  }
+  
+  .embed-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+  }
+  
+
+  @media (max-width: 576px) {
+    .col-sm-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    .btn {
+      font-size: 0.9rem;
+    }
+  
+    .form-control,
+    .form-select {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  
+    .card-body {
+      padding: 0.75rem;
+      color: #f8f9fa;
+    }
+  
+    .list-group-item {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px) {
+    .col-sm-6,
+    .col-md-4 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  
+    .form-control,
+    .form-select {
+      width: auto;
+    }
+  
+    .card-body {
+      padding: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 992px) {
+    .col-md-4,
+    .col-lg-3 {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .col-lg-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    .col-md-3 {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .col-md-3 {
+      display: block;
+    }
+  }
+  
+
+  input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+
+  .card-body.bg-danger,
+  .card-body.bg-success,
+  .card-body.bg-secondary,
+  .card-body.bg-info,
+  .card-body.bg-warning {
+    color: white;
+
+  }
+  
+
+  img.rounded-circle {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+.card-text{
+    color: red;
+}

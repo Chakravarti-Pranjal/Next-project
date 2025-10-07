@@ -1,0 +1,138 @@
+.accordionContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.accordionItem {
+  margin-bottom: 8px;
+  background: #414141;
+  color: white;
+}
+
+.accordionText {
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+.accordionHeading {
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.accordionIcon {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.accordionIcon img {
+  width: 20px;
+  user-select: none;
+}
+
+.accordionIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  overflow-x: auto;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  background: rgb(42 42 42);
+}
+.rotate {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  padding-bottom: 0px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #444;
+}
+.componentItem{
+  position: relative;
+}
+.deleteButton{
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+@media all and (min-width: 768px) {
+  .accordionHeader .accordionText {
+    font-size: 18px !important;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .accordionIconWrap {
+    overflow-x: initial;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .accordionHeader .accordionText {
+    font-size: 22px !important;
+  }
+  .accordionIcon {
+    width: 37px;
+    height: 37px;
+  }
+  .accordionIcon img {
+    width: auto;
+  }
+}
+
+
+/* data-theme-version="light" */
+
+[data-theme-version="light"] .accordionItem {
+  background: #f5f5f5;
+  color: #222;
+}
+
+[data-theme-version="light"] .accordionText {
+  color: #333;
+}
+
+[data-theme-version="light"] .arrow {
+  background: #e0e0e0;
+}
+
+[data-theme-version="light"] .accordionContent {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+[data-theme-version="light"] .accordionIcon {
+  background-color: transparent;
+}
+
+[data-theme-version="light"] .accordionIcon img {
+  filter: invert(0); /* Optional: remove white icon inversion if applied */
+}
+
+[data-theme-version="light"] .deleteButton {
+  color: #666;
+}

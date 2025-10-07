@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CostSheet-FIT</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+        padding: 0;
+      }
+
+      .container {
+        width: 90%;
+        margin: 10px auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background: #e23428;
+        color: white;
+        padding: 7px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 1rem;
+      }
+      .headers {
+        background: red;
+        color: white;
+        padding: 7px;
+      }
+      .headers h1 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .details {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+
+      .details div {
+        flex: 1;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 5px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 3px;
+        text-align: left;
+        font-size: 12px;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+
+      .totals-row {
+        background-color: #f9f9f9;
+        font-weight: lighter;
+      }
+
+      .export-btn :hover {
+        background-color: #e23428;
+      }
+
+      .sub-section {
+        margin-top: 20px;
+      }
+
+      .sub-section .row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sub-section .column {
+        width: 48%;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 7px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .column h2 {
+        text-align: left;
+
+        font-size: 14px;
+      }
+      table td{
+        background-color: #f9f9f9;
+      }
+
+      .totals-table {
+        margin-top: 10px;
+      }
+      .button-container {
+        text-align: end;
+      }
+
+      .custom-button {
+        background: linear-gradient(135deg, #e23428, #e23428);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 10px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin-top: 5px;
+      }
+
+      .custom-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .custom-button:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      /* style={{ height: "40rem",overflow: "hidden auto", }} */
+      /* .scroll-x{
+        height: auto;
+        overflow:"hidden auto";
+      } */
+      
+    </style>
+  </head>
+  <body>
+    <div class="scroll-x" >
+      <div
+      class="header"
+      style="
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid lightgrey;
+      "
+    >
+      <div>
+        <h1 style="text-align: center; padding: 0px">Cost Sheet : 64674</h1>
+      </div>
+
+      <div>
+        Mr & Mrs Alter X 02/Opinion 1
+        <p style="margin: 0px; font-size: 0.75rem">
+          Created Date : 09-02-2025 14:37:05 (V-1)
+        </p>
+      </div>
+
+      <!-- <button class="export-btn" style="background-color: white;
+              color: #e23428;
+              border-radius: 10px;
+              cursor: pointer;
+              padding: 5px 10px;
+              outline: none;
+              border: 1px solid lightgray;" 
+              >Export</button> -->
+    </div>
+       <div class="table-container">
+         <table style="margin-top: 0px; border: 1px solid lightgrey">
+        <tbody>
+          <tr>
+            <td style="border: 1px solid grey">
+              Client Name : 1 Travel Agency (ForeignAgent)
+            </td>
+            <td style="border: 1px solid grey">
+              Duration : 14N-15D Start Date:Sunday,09-Feb-2025
+            </td>
+            <td style="border: 1px solid grey">Country : United States</td>
+            <td style="border: 1px solid grey">Issue Date: 11-Nov-2025</td>
+            <td style="border: 1px solid grey">PAX UPTO : 002+00</td>
+            <td style="border: 1px solid grey">Currency : USD</td>
+            <td style="border: 1px solid grey">Exchange @ : 80</td>
+            <td style="border: 1px solid grey">Tour Type : FIT</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-container">
+      <table style="margin-top: 0px; border: 1px solid lightgrey">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Air /Train</th>
+            <th>Sector</th>
+            <th >Hotel</th>
+            <th>DBL</th>
+            <th>SGL</th>
+            <th>Ex-Bd</th>
+            <th>Room Type</th>
+            <th>Meal Plan</th>
+            <th>B</th>
+            <th>L</th>
+            <th>D</th>
+            <th colspan="3">Transport</th>
+            <th>Guide</th>
+            <th>Escort</th>
+            <th>Entrance</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Program</th>
+            <th>AC Innova</th>
+            <th>Misc</th>
+
+            <th>002+00</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>SGL</td>
+                      <td>DBL</td>
+                      <td>TPL</td>
+                      <td>TWN</td>
+                      <td>B</td>
+                      <td>L</td>
+                      <td>D</td>
+                  </tr>  -->
+          <tr style="z-index: 1000;">
+            <td>1:S:9Feb</td>
+            <td></td>
+            <td>Arrive Mumbai</td>
+            <td>The Taj Mahal Palace (Maharashtra)</td>
+            <td>43100 #</td>
+            <td>43100 #</td>
+            <td>0 #</td>
+            <td>Luxury Grande City/Pool View P/W</td>
+            <td>CP</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              Arrival Transfer ( International Airport / Delhi Hotel) [ Delhi
+            </td>
+            <td>1 *</td>
+            <td>500(A)</td>
+
+           <td></td>
+           <td></td>
+           <td></td>
+          </tr>
+          <tr>
+              <td>2:M:10Feb</td>
+              <td></td>
+              <td>Mumbai</td>
+              <td>The Taj Mahal Palace (Maharashtra)</td>
+              <td>43100 #</td>
+              <td>43100 #</td>
+              <td>0 #</td>
+              <td>Luxury Grande City/Pool View P/W</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  Full Day Disposal (08 hrs / 80
+                  Kms within the city limits) [
+                  Delhi (S)
+              </td>
+              <td>1 *</td>
+              <td></td>
+
+             <td>7302 *</td>
+             <td></td>
+             <td>40 *</td>
+            </tr>
+            <tr>
+              <td>3:T:11Feb</td>
+              <td>11300(F)</td>
+              <td>Udaipur</td>
+              <td>The Leela Palace Udaipur
+                  (Rajasthan)</td>
+              <td>69100 #</td>
+              <td>69100 #</td>
+              <td>0 #</td>
+              <td>Lake
+                  View
+                  Rooms
+                  With
+                  Balcony</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  Departure Transfer ( Delhi Hotel
+                  / Domestic Airport ) [ Delhi
+              </td>
+              <td>1 *</td>
+              <td>500(A)</td>
+
+             <td></td>
+             <td>14650</td>
+             <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  Arrival Transfer (Airport / City
+                  Hotel) [ Udaipur (AT)
+              </td>
+              <td>4500 *</td>
+              <td>450(A)</td>
+
+             <td></td>
+             <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td>4:W:12Feb</td>
+              <td></td>
+              <td>Udaipur</td>
+              <td>The Leela Palace Udaipur
+                  (Rajasthan)</td>
+              <td>69100 #</td>
+              <td>69100 #</td>
+              <td>0 #</td>
+              <td>Lake
+                  View
+                  Rooms
+                  With
+                  Balcony</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  Full Day Disposal for maximum
+                  08 hrs / 80 Kms within the city
+                  limits [ Udaipur (S)
+              </td>
+              <td>4500 *</td>
+              <td></td>
+             <td></td>
+             <td>7650</td>
+             <td>500 *</td>
+            </tr>
+            <tr>
+              <td>5:T:13Feb</td>
+              <td>15700(F)</td>
+              <td>Varanasi</td>
+              <td>Taj Ganges (Uttar Pradesh)</td>
+              <td>35000 #</td>
+              <td>35000 #</td>
+              <td>0 #</td>
+              <td>Executive
+                  Suite</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  Departure Transfer (City Hotel /
+                  Airport) [ Udaipur (AT)
+              </td>
+              <td>2000 *</td>
+              <td>450(A)</td>
+             <td></td>
+             <td>7650</td>
+             <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  City tour [ Varanasi (S)
+              </td>
+              <td>1 *</td>
+              <td></td>
+
+             <td></td>
+             <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  Visit to Sarnath [ Varanasi (S)
+              </td>
+              <td>1 *</td>
+              <td>500(A)</td>
+
+             <td></td>
+             <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td>7:S:15Feb</td>
+              <td>7200(F)</td>
+              <td>Khajuraho / Panna</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                  02 nights / 03 days outstation
+           (02 nights Bandhavgarh) [
+           Khajuraho (Pkg)
+              </td>
+              <td>25000 *</td>
+              <td>1000(A)</td>
+
+             <td></td>
+             <td>7650</td>
+             <td>600</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Pashan Garh, A Taj Safari
+                  (Amanganj Road, Panna)</td>
+              <td>69620 #</td>
+              <td>57820 #</td>
+              <td>0 #</td>
+              <td>Standard</td>
+              <td>AP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+              </td>
+              <td></td>
+              <td></td>
+
+             <td></td>
+             <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td>8:S:16Feb</td>
+              <td></td>
+              <td>Panna</td>
+              <td>Pashan Garh, A Taj Safari
+                  (Amanganj Road, Panna)</td>
+              <td>57820 #</td>
+              <td>0 #</td>
+              <td>Standard</td>
+              <td>AP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                 
+              </td>
+              <td></td>
+              <td></td>
+
+             <td></td>
+             <td>7650</td>
+             <td></td>
+            </tr>
+            <tr>
+              <td>9:M:17Feb</td>
+              <td>1960(T)</td>
+              <td>Orchha / Jhansi / Agra</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+               <td></td>
+             <td>7650</td>
+             <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+               <td></td>
+             <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>The Oberoi Amarvilas (Uttar
+                  Pradesh)</td>
+              <td>84016 #</td>
+              <td>81833 #</td>
+              <td>0 #</td>
+              <td>Premier</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+               <td></td>
+             <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td>10:T:18Feb</td>
+              <td></td>
+              <td>Agra</td>
+              <td>The Oberoi Amarvilas (Uttar
+                  Pradesh)</td>
+              <td>84016 #</td>  
+              <td>81833 #</td>
+              <td>0 # </td>
+              <td>Premier</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+               <td></td>
+             <td>7650</td>
+             <td> 1910 *</td>
+            </tr>
+            <tr>
+              <td>11:W:19Feb</td>
+              <td></td>
+              <td>Abhaneri / Jaipur</td>
+              <td>The Oberoi Amarvilas (Uttar
+                  Pradesh)</td>
+              <td>84016 #</td>  
+              <td>81833 #</td>
+              <td>0 # </td>
+              <td>Premier</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Arrival transfer (Railway Station
+                  / Hotel) [ Jaipur (Tr)</td>
+              <td>29700 *</td>
+              <td>1000(A)</td>
+               <td></td>
+             <td>7650</td>
+             <td> </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Rambagh Palace (Rajasthan)</td>
+              <td>113300 #</td>
+              <td>113300 #</td>
+              <td>0 #</td>
+              <td>Historical
+                  Suite</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+               <td></td>
+             <td></td>
+            </tr>
+            <tr>
+              <td>12:T:20Feb</td>
+              <td></td>
+              <td>Abhaneri / Jaipur</td>
+              <td>The Oberoi Amarvilas (Uttar
+                  Pradesh)</td>
+              <td>84016 #</td>  
+              <td>81833 #</td>
+              <td>0 # </td>
+              <td>Premier</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Arrival transfer (Railway Station
+                  / Hotel) [ Jaipur (Tr)</td>
+              <td>29700 *</td>
+              <td>1000(A)</td>
+               <td></td>
+             <td>7650</td>
+             <td> 700</td>
+            </tr>
+            <tr>
+              <td>13:F:21Feb</td>
+              <td></td>
+              <td>Delhi</td>
+              <td>The Leela Palace
+                  (Chanakyapuri) (New Dehi)</td>
+              <td>29000 #</td>   
+              <td>29000 #</td>
+              <td>0 # </td>
+              <td>Grand
+                  Deluxe</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Arrival transfer (Railway Station
+                  / Hotel) [ Jaipur (Tr)</td>
+              <td>29700 *</td>
+              <td>1000(A)</td>
+               <td></td>
+             <td>3600 </td>
+             <td> 950 *</td>
+            </tr>
+            <tr>
+              <td>14:S:22Feb</td>
+              <td></td>
+              <td>Delhi</td>
+              <td>The Leela Palace
+                  (Chanakyapuri) (New Dehi)</td>
+              <td>29000 #</td>   
+              <td>29000 #</td>
+              <td>0 # </td>
+              <td>Grand
+                  Deluxe</td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Arrival transfer Domestic
+                  Airport / Hotel or Vice Versa [
+                  Mumbai</td>
+               
+              <td>4500  *</td>
+              <td>500(A)</td>
+              <td></td>
+             <td>3600 </td>
+             <td> </td>
+            </tr>
+            <tr>
+              <td>15:S:23Feb</td>
+              <td></td>
+              <td>Delhi Depart</td>
+              <td></td>
+              <td></td>   
+              <td></td>
+              <td> </td>
+              <td></td>
+              <td>CP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Full day disposal 08 hrs / 80
+                  Kms within the city limits [
+                  Mumbai (S)i</td>
+               
+              <td>6000 *</td>
+              <td></td>
+              <td></td>
+             <td>3600 </td>
+             <td> </td>
+            </tr>
+            </tbody>
+          <!-- </table>
+      </div> -->
+       <!-- <div class="table-container">
+      <table style="background-color: #f9f9f9;"> -->
+        <thead>
+          <tr>
+           
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th>Departure transfer Hotel /
+              International Airport [ Mumbai</th>
+           <th>4500 *</th>
+           <th>500(A)</th>
+           <th></th>
+           <th></th>
+           <th></th>
+          </tr>
+          <tr>
+              <th></th>
+              <th>36160</th>
+              <th colspan="2">Total</th>
+              <th>886272</th>
+              <th>858306</th>
+              <th>0</th>
+              <th></th>
+              <th></th>
+              <th>0(Sp)</th>
+              <th>0(Sp)</th>
+              <th>0(Sp)</th>
+              <th>0 (P)</th>
+              <th>91706</th>
+              <th>5900</th>
+              <th>11404</th>
+              <th>94300</th>
+              <th>4700</th>
+             </tr>
+      </thead>
+      </table>
+  </div>
+  <div style="padding: 10px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+      <p>T:=Train; F:=Flight; Sp:=Supplement; A:=Assistance: P:=Portages; N:=Night Halt Charges; AT:=Air/Train Transfer; Tr:= Transfer; S:=Sightseeing; Pkg:=Package</p>
+      <p>* = The rates entered are different from the contracted rates</p>
+      <p># = The chosen service(s) does not exist in masters</p>
+  </div>
+  <div
+  class="headers"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid lightgrey;">
+  <div>
+      <h1 style="text-align: center; padding: 0px; ">Escort Detail</h1>
+  </div>
+  </div>
+  <div class="table-container">
+      <table style="margin-top: 0px; border: 1px solid lightgrey">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Air /Train</th>
+            <th>Sector</th>
+            <th >Hotel</th>
+            <th>DBL</th>
+            <th>SGL</th>
+            <th>Ex-Bd</th>
+            <th>Room Type</th>
+            <th>Meal Plan</th>
+            <th>B</th>
+            <th>L</th>
+            <th>D</th>
+          </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>1:S:9Feb</td>
+                  <td></td>
+                  <td>Arrive Mumbai</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>2:M:10Feb</td>
+                  <td></td>
+                  <td>Mumbai</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>3:T:11Feb</td>
+                  <td></td>
+                  <td>Udaipur</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>4:W:12Feb</td>
+                  <td></td>
+                  <td>Udaipur</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>4:W:12Feb</td>
+                  <td></td>
+                  <td>Udaipur</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>5:T:13Feb</td>
+                  <td>11500(F)</td>
+                  <td>Varanasi</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>6:F:14Feb</td>
+                  <td></td>
+                  <td>Varanasi</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>7:S:15Feb</td>
+                  <td>5200(F)</td>
+                  <td>Khajuraho / Panna</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>8:S:16Feb</td>
+                  <td></td>
+                  <td>Panna</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>8:S:16Feb</td>
+                  <td></td>
+                  <td>Panna</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>9:M:17Feb</td>
+                  <td>2150(T)</td>
+                  <td>Orchha / Jhansi / Agra</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>10:T:18Feb</td>
+                  <td></td>
+                  <td>Agra</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>11:W:19Feb</td>
+                  <td></td>
+                  <td>Abhaneri / Jaipur</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>10:T:18Feb</td>
+                  <td></td>
+                  <td>Agra</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>12:T:20Feb</td>
+                  <td></td>
+                  <td>Jaipur</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>13:F:21Feb</td>
+                  <td></td>
+                  <td>Delhi</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>14:S:22Feb</td>
+                  <td></td>
+                  <td>Delhi</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+              <tr>
+                  <td>15:S:23Feb</td>
+                  <td></td>
+                  <td>Delhi Depart</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <thead>
+              <tr>
+                <th></th>
+                <th>18850</th>
+                <th colspan="2">Total</th>
+                <th>0</th>
+                <th>0</th>
+                <th>0</th>
+                <th></th>
+                <th></th>
+                <th>0(Sp)</th>
+                <th>0(Sp)</th>
+                <th>0(Sp)</th>
+              </tr>
+              </thead>
+        </table>
+      </div>
+
+
+       <div style="padding: 5px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+            <p>T:=Train; F:=Flight; Escort Cost does not taken as supplement</p>  
+        </div>
+        <div
+           class="headers"
+           style="
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border: 2px solid lightgrey;">
+           <div>
+               <h1 style="text-align: center; padding: 0px; ">Escort Service Detail</h1>
+           </div>
+        </div>
+        <div class="table-container">
+          <table style="margin-top: 0px; border: 1px solid lightgrey">
+            <thead>
+              <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Particular</th>
+                <th >Days</th>
+                <th>Pay Per Day</th>
+                <th>Total Amount</th>
+                <th>Remark</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>3:T:11Feb</td>
+                    <td>3:T:11Feb</td>
+                    <td>Outstion</td>
+                    <td>1</td>
+                    <td>7650</td>
+                    <td>7650</td>
+                    <td></td>
+                </tr> 
+                </tbody>
+                <tbody>
+                  <tr>
+                      <td>3:T:11Feb</td>
+                      <td>3:T:11Feb</td>
+                      <td>Delhi / udiapur flight</td>
+                      <td>1</td>
+                      <td>7000</td>
+                      <td>7000</td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>4:W:12Feb</td>
+                    <td>4:W:12Feb</td>
+                    <td>Udaipur</td>
+                    <td>1</td>
+                    <td>7650</td>
+                    <td>7650</td>
+                    <td></td>
+                </tr> 
+            </tbody>
+            <tbody>
+              <tr>
+                  <td>5:T:13Feb</td>
+                  <td>5:T:13Feb</td>
+                  <td>Varanasi</td>
+                  <td>1</td>
+                  <td>7650</td>
+                  <td>7650</td>
+                  <td></td>
+              </tr> 
+            </tbody>
+            <tbody>
+              <tr>
+                  <td>6:F:14Feb</td>
+                  <td>6:F:14Feb</td>
+                  <td>Varanasi</td>
+                  <td>1</td>
+                  <td>7650</td>
+                  <td>7650</td>
+                  <td></td>
+              </tr> 
+          </tbody>
+          <tbody>
+            <tr>
+                <td>7:S:15Feb</td>
+                <td>7:S:15Feb</td>
+                <td>Khajurhoa</td>
+                <td>1</td>
+                <td>7650</td>
+                <td>7650</td>
+                <td></td>
+               </tr> 
+           </tbody>
+           <tbody>
+             <tr>
+                 <td>8:S:16Feb</td>
+                 <td>8:S:16Feb</td>
+                 <td>Panna</td>
+                 <td>1</td>
+                 <td>7650</td>
+                 <td>7650</td>
+                 <td></td>
+             </tr> 
+           </tbody>
+           <tbody>
+            <tr>
+                <td>9:M:17Feb</td>
+                <td>9:M:17Feb</td>
+                <td>Agra</td>
+                <td>1</td>
+                <td>7650</td>
+                <td>7650</td>
+                <td></td>
+            </tr> 
+           </tbody>
+           <tbody>
+            <tr>
+                <td>10:T:18Feb</td>
+                <td>10:T:18Feb</td>
+                <td>Agra</td>
+                <td>1</td>
+                <td>7650</td>
+                <td>7650</td>
+                <td></td>
+            </tr> 
+            </tbody>
+            <tbody>
+              <tr>
+                  <td>11:W:19Feb</td>
+                  <td>11:W:19Feb</td>
+                  <td>Jiapur</td>
+                  <td>1</td>
+                  <td>7650</td>
+                  <td>7650</td>
+                  <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>12:T:20Feb</td>
+                    <td>12:T:20Feb</td>
+                    <td>Jaipur</td>
+                    <td>1</td>
+                    <td>7650</td>
+                    <td>7650</td>
+                    <td></td>
+                   </tr> 
+                </tbody>
+                <tbody>
+                  <tr>
+                      <td>13:F:21Feb</td>
+                      <td>13:F:21Feb</td>
+                        <td>Delhi</td>
+                        <td>1</td>
+                        <td>3600</td>
+                        <td>3600</td>
+                        <td></td>
+                    </tr> 
+                </tbody>
+                <tbody>
+                  <tr>
+                      <td>14:S:22Feb</td>
+                      <td>14:S:22Feb</td>
+                      <td>Delhi</td>
+                      <td>1</td>
+                      <td>3600</td>
+                      <td>3600</td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>15:S:23Feb</td>
+                    <td>15:S:23Feb</td>
+                    <td>Delhi</td>
+                    <td>1</td>
+                    <td>3600</td>
+                    <td>3600</td>
+                    <td></td>
+                </tr> 
+            </tbody>
+          </table>
+        </div>
+        <div
+        class="headers"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid lightgrey;">
+        <div>
+            <h1 style="text-align: center; padding: 0px; ">Air / Train Detail</h1>
+        </div>
+        </div>
+        <div class="table-container">
+          <table style="margin-top: 0px; border: 1px solid lightgrey">
+            <thead>
+              <tr>
+                <th>Sector</th>
+                <th>Name</th>               
+                <th >Departure</th>
+                <th>Arrival</th>
+                <th>Amount/Pax</th>
+                <th>Guide</th>
+                <th>Escort</th>
+                <th>Service Charge</th>
+                <th>Handling
+                  Charge</th>
+                <th>Remark</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>Mumbai - Udaipur by Flight</td>
+                    <td>AI 2613</td>
+                    <td>12:20</td>
+                    <td>13:45</td>
+                    <td>7100 #</td>
+                    <td></td>
+                    <td></td>
+                    <td>1200 #</td>
+                    <td>3000 #</td>
+                    <td>ECOFLEX (Val: )</td>
+              </tbody> 
+              <tbody>
+                <tr>
+                    <td>Udaipur - Varanasi by Flight</td>
+                    <td>6E 2284, 6E 2004</td>
+                    <td>9:55</td>
+                    <td>15:30</td>
+                    <td>15:30</td>
+                    <td></td>
+                    <td>10000</td>
+                    <td>1500 #</td>
+                    <td>0</td>
+                    <td>SUPER 6E (Val: )</td>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Varanasi - Khajuraho by Fligh</td>
+                    <td>6E 2083</td>
+                    <td>12:25</td>
+                    <td>13:20</td>
+                    <td>6000 #</td>
+                    <td></td>
+                    <td>4000</td>
+                    <td>1200 #</td>
+                    <td>0</td>
+                    <td>SUPER 6E (Val: )</td>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Jhansi - Agra by Train</td>
+                    <td>GATIMAAN EXP (12049)</td>
+                    <td>15:05</td>
+                    <td>17:35</td>
+                    <td>1610 #</td>
+                    <td></td>
+                    <td>1800</td>
+                    <td>350 #</td>
+                    <td>0</td>
+                    <td></td>
+              </tbody>
+          </table>
+          </div>
+          <div
+          class="headers"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid lightgrey;">
+          <div>
+              <h1 style="text-align: center; padding: 0px; ">Monuments</h1>
+          </div>
+          </div>
+          <div class="table-container">
+            <table style="margin-top: 0px; border: 1px solid lightgrey">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Sector</th>               
+                  <th >Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2:M:10Feb</td>
+                    <td>Mumbai</td>
+                      <td>Gateway of India, Mani Bhawan, Hanging Garden, Dhobi Ghat (Photostop), Marine drive</td>
+                </tbody>
+                <tbody>
+                <tr>
+                  <td>3:T:11Feb</td>
+                  <td>Udaipur</td>
+                  <td>Lake Pichhola</td>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td>4:W:12Feb</td>
+                      <td>Udaipur</td>
+                      <td>City Palace, Jagdish Temple, Shilpgram</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>6:F:14Feb</td>
+                    <td>Varanasi</td>
+                    <td>Boat ride, Banaras Hindu University, Kashi Vishwanath Temple (University), Tulsi Manas Temple, Bharat Mata Temple, Aarti Ceremony on River Ganges</td>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>7:S:15Feb</td>
+                  <td>Khajuraho</td>
+                  <td>Eastern and Western Groups of Temple</td>
+                     </tbody>
+                     <tbody>
+                       <tr>
+                         <td>10:T:18Feb</td>
+                         <td>Agra</td>
+                         <td>Taj Mahal, Agra Fort</td>
+                   </tbody>
+                   <tbody>
+                     <tr>
+                       <td>12:T:20Feb</td>
+                       <td>Jaipur</td>
+                       <td>Photo stop at the Hawa Mahal Palace, Amber Fort, Jantar Mantar</td>
+                 </tbody>
+                 <tbody>
+                   <tr>
+                     <td>13:F:21Feb</td>
+                     <td>Delhi</td>
+                     <td>Jama Masjid, Red Fort, Humayun Tomb, Drive past the Govt. Buildings, Photo stop at the India Gate</td>
+               </tbody>
+            </table>
+          </div>
+          <div
+               class="headers"
+               style="
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 border: 2px solid lightgrey;">
+               <div>
+                   <h1 style="text-align: center; padding: 0px; ">Add On's</h1>
+               </div>
+          </div>
+          <div class="table-container">
+            <table style="margin-top: 0px; border: 1px solid lightgrey">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Sector</th>               
+                  <th >Name</th>
+                  <th >Escort</th>
+                  <th >002+00</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1:S:9Feb</td>
+                    <td>Delhi</td>
+                    <td>Mineral water+</td>
+                    <td>No</td>
+                    <td>1600 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>2:M:10Feb</td>
+                    <td>Delhi</td>
+                    <td>Rickshaw Ride in Old Delhi+</td>
+                    <td>No</td>
+                    <td>300 *</td>
+                </tbody>
+
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Mumbai</td>
+                    <td>Half Day Walking tour of Mumbai+</td>
+                    <td>No</td>
+                    <td>1 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>3:T:11Feb</td>
+                    <td>3:T:11Feb</td>
+                    <td>3:T:11Feb</td>
+                    <td>No</td>
+                    <td>8500</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>4:W:12Feb</td>
+                    <td>Udaipur</td>
+                    <td>Painting workshop with a Local artist +</td>
+                    <td>No</td>
+                    <td>7000 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>6:F:14Feb</td>
+                    <td>6:F:14Feb</td>
+                    <td>Boat ride+</td>
+                    <td>No</td>
+                    <td>2000 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Evening Bazaar walk and Aarti+</td>
+                    <td>No</td>
+                    <td>1000 *</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>8:S:16Feb</td>
+                    <td>Panna</td>
+                    <td>Panna</td>
+                    <td>No</td>
+                    <td>23600 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>10:T:18Feb</td>
+                    <td>Agra</td>
+                    <td>High Tea with Snacks at Sky Deck Restaurant +</td>
+                    <td>No</td>
+                    <td>9000 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>12:T:20Feb</td>
+                    <td>Jaipur</td>
+                    <td>Henna printing on the hands +</td>
+                    <td>No</td>
+                    <td>600 #</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Pink Rickshaw ride through Old city+</td>
+                    <td>No</td>
+                    <td>1600 *</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>14:S:22Feb</td>
+                    <td>Mumbai</td>
+                    <td>Visit the Crawford Market+</td>
+                    <td>No</td>
+                    <td>2</td>
+                </tbody>
+            </table>
+          </div>
+          <div style="padding: 5px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+            <p>+ Service Cost Included in Total Tour Cost</p>  
+          </div>
+            <div
+             class="headers"
+             style="
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               border: 2px solid lightgrey;">
+             <div>
+                 <h1 style="text-align: center; padding: 0px; ">Cost Summary</h1>
+             </div>
+          </div>
+          <div class="table-container">
+            <table style="margin-top: 0px; border: 1px solid lightgrey">
+              <thead>
+                <tr>
+                  <th>PAX/DF</th>
+                  <th>PAX/DF</th>               
+                  <th >PAX/DF</th>
+                  <th >Meal</th>
+                  <th >Add
+                    On's0</th>
+                  <th >Day
+                    Act</th>
+                  <th >Misc</th>
+                  <th >Supp</th>
+                  <th >Monu</th>
+                  <th >Guide</th>
+                  <th >Escort</th>
+                  <th >Tour
+                    Cost</th>
+                  <th >Tour
+                    Profit</th>
+                  <th >ST 5%</th>
+                  <th >Train</th>
+                  <th >Train</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>002+00/2</td>
+                    <td>AC
+                      Innova (1)</td>
+                    <td>48803</td>
+                    <td>443136</td>
+                    <td>0</td>
+                    <td>27602</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>4700</td>
+                    <td>5702</td>
+                    <td>56575</td>
+                    <td>586518</td>
+                    <td>67106</td>
+                    <td>32681</td>
+                    <td>1960</td>
+                </tbody>
+            </table>
+          </div>
+          <div style="padding: 5px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+            <p>Supplement cost for Single Room (SRS): 483881 INR (6049 (USD)); Reduction cost for Triple Share Room (TRR): 0 INR (0 (USD)).</p>  
+            <p>Accommodation cost made on twin share basis.</p>  
+            <p>Total Tour Cost for 2 PAX = 1376530 INR 17207 USD</p>  
+            <p>Double: (1 x 2) x 688265 = 1376530 INR 17207 USD</p>  
+          </div>
+          <div class="table-container">
+            <table style="margin-top: 0px; border: 1px solid lightgrey ; padding-left: 15px;">
+              <thead>
+                <tr>
+                  <th>Margin Calculated on Cost Price; Hotel:=11%; Transport:=20%; Meal:=10%; Guide:=9%; Escort:=9%; Others:=10%; Allow Margin As Package :=No. <br>* As Supplement.</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div
+          class="headers"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid lightgrey;">
+          <div>
+              <h1 style="text-align: center; padding: 0px; ">Final Tour Cost Summary</h1>
+          </div>
+         </div>
+         <div class="table-container">
+          <table style="margin-top: 0px; border: 1px solid lightgrey">
+            <thead>
+              <tr>
+                <th>Particular</th>
+                <th>Land</th>               
+                <th >Air</th>
+                <th >Final</th>
+                <th >Final in [USD (@80)]</th>
+                
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total SALE Price</td>
+                  <td>1376530</td>
+                  <td>68400</td>
+                  <td>1444930</td>
+                  <td>18061.62</td>
+                </tr>
+              </tbody>  
+              <tbody>
+                <tr>
+                  <td>Total COST Price</td>
+                  <td>1235607</td>
+                  <td>54600</td>
+                  <td>1290207</td>
+                  <td>16127.59</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Profit</td>
+                  <td>140923</td>
+                  <td>13800</td>
+                  <td>154723</td>
+                  <td>1934.03</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Profit %</td>
+                  <td>11.41</td>
+                  <td>25.27</td>
+                  <td>11.99</td>
+                  <td>11.99</td>
+                </tr>
+              </tbody>
+
+           </table>
+         </div>
+          
+
+
+    </div>
+  </body>
+</html>

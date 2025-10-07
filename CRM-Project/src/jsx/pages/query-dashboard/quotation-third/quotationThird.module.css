@@ -1,0 +1,358 @@
+.wrapper {
+  color: #828690;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.header {
+  background-color: #2a2a2a;
+  padding: 2px 4px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  width: 100%;
+  padding-right: 70px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  flex: none;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  flex: none;
+}
+.controls label {
+  color: #828690;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hikeBtn {
+  background-color: #2e2e40;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.hikeBtn input {
+  background-color: #2e2e40;
+  border: 0.1px solid #828690;
+  border-radius: 4px;
+  position: relative;
+  color: #fff;
+  padding: 1px 3px;
+}
+.inputSmall {
+  width: 60px;
+  margin-left: 5px;
+  padding: 4px;
+}
+
+.upgradeBtn {
+  background-color: #2e2e40;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.upgradeBtn:hover {
+  background-color: #2a2a2a;
+}
+
+/* .tableContainer {
+  overflow-x: auto;
+} */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(42 42 42);
+}
+
+.table th,
+.table td {
+  background-color: rgb(42 42 42) !important;
+  border: 1px solid #3d3d3d;
+  color: #6e6e6e;
+  padding: 4px 3px;
+  text-align: center;
+}
+
+.bgTable {
+  background-color: rgb(42 42 42) !important;
+}
+.table td {
+  background-color: #2e2e40 !important;
+  
+}
+.table th{
+  line-height: 14px !important;
+}
+.table td span{
+  line-height: 11px !important;
+  display: block;
+}
+.bgTable td {
+  background-color: #1e1e1e !important;
+  color: #fff;
+}
+.editText{
+  color: #d4d4d4 !important;
+  text-align: start !important;
+}
+
+.tableContainer .select {
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  border: 1px solid rgb(42 42 42) !important;
+  width: 100%;
+}
+
+.tableContainer .input:not([type="checkbox"]) {
+  border-radius: 2px;
+  background: #fff;
+  color: #000;
+  border: 1px solid rgb(42 42 42) !important;
+  width: 80px;
+}
+.tableContainer input:not([type="checkbox"]),
+.tableContainer select {
+  padding: 1px 3px !important;
+  font-size: 10px;
+  background-color: #2e2e40 !important;
+  color: #fff !important;
+  border: 0.1px solid rgb(61 61 61) !important  ;
+  width: 80px !important;
+}
+.tableContainer input[type="checkbox"] {
+  margin: 0 !important;
+  width: 11.2px !important;
+  height: 11.2px !important;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  background: rgb(42 42 42);
+}
+.rotate {
+  transform: rotate(180deg);
+}
+
+.tableContainer.twoTable {
+  display: flex;
+  align-items: start;
+  gap: 14px;
+}
+
+/* guide */
+
+.title select {
+  padding: 2px;
+  border-radius: 4px;
+  color: #000;
+  font-size: 10px;
+  background-color: #2e2e40 !important;
+  color: #fff !important;
+  border: 0.1px solid rgb(61 61 61) !important  ;
+  width: 80px !important;
+  margin-left: 10px;
+}
+/* transport */
+
+.dropdownButton {
+  position: relative;
+  width: 100%;
+  padding: 6px;
+  background-color: #2b2b2b;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1px solid rgb(61 61 61);
+  border-radius: 6px;
+}
+
+.dropdownButtonArrow {
+  margin-left: 10px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  width: 130px;
+  background-color: #2b2b2b;
+  color: white;
+  border: 1px solid #444;
+  max-height: 200px;
+  overflow-y: auto;
+  right: 0;
+  border-radius: 6px;
+  z-index: 1;
+}
+.dropdownMenu input {
+  flex: none;
+}
+.dropdownButtonWrap {
+  position: relative;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #3a3a3a;
+}
+
+
+/* hotel nameDestination  */
+.showDestination{
+  margin-left: 60px;
+}
+.showDestination .hikeBtn{
+  padding: 4px;
+}
+.nameDestination{
+  font-size: 14px !important;
+  color: #b3b3b3;
+}
+
+@media all and (min-width:768px) {
+  .header {
+    overflow-x: initial;
+  }
+  .title {
+    flex: initial;
+  }
+  
+  .controls {
+    flex: initial;
+  }
+}
+
+
+/* data-theme-version="light" */
+
+
+[data-theme-version="light"] .wrapper {
+  color: #4a4a4a;
+}
+
+[data-theme-version="light"] .header {
+  background-color: #f1f1f1;
+}
+
+[data-theme-version="light"] .title {
+  color: #111;
+}
+
+[data-theme-version="light"] .controls label {
+  color: #4a4a4a;
+}
+
+[data-theme-version="light"] .hikeBtn {
+  background-color: #e0e0e0;
+}
+
+[data-theme-version="light"] .hikeBtn input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+[data-theme-version="light"] .upgradeBtn {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+[data-theme-version="light"] .upgradeBtn:hover {
+  background-color: #357ab8;
+}
+
+[data-theme-version="light"] .table {
+  background-color: #ffffff;
+}
+
+[data-theme-version="light"] .table th,
+[data-theme-version="light"] .table td {
+  background-color: #f9f9f9 !important;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+[data-theme-version="light"] .table td {
+  background-color: #fff !important;
+}
+
+[data-theme-version="light"] .bgTable td {
+  background-color: #f1f1f1 !important;
+  color: #000;
+}
+
+[data-theme-version="light"] .editText {
+  color: #222 !important;
+}
+
+[data-theme-version="light"] .tableContainer .select,
+[data-theme-version="light"] .tableContainer .input:not([type="checkbox"]),
+[data-theme-version="light"] .tableContainer input:not([type="checkbox"]),
+[data-theme-version="light"] .tableContainer select {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+}
+
+[data-theme-version="light"] .tableContainer input[type="checkbox"] {
+  border: 1px solid #aaa;
+}
+
+[data-theme-version="light"] .arrow {
+  background: #eaeaea;
+}
+
+[data-theme-version="light"] .title select {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+}
+
+[data-theme-version="light"] .dropdownButton {
+  background-color: #f1f1f1;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+[data-theme-version="light"] .dropdownMenu {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+[data-theme-version="light"] .option:hover {
+  background-color: #f0f0f0;
+}
+
+[data-theme-version="light"] .nameDestination {
+  color: #333;
+}

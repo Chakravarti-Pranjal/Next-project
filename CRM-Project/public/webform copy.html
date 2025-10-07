@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Enquiry Form with Slider</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+
+        .main-container {
+            margin: 0 auto;
+            width: 100%;
+            /* max-width: 1200px; */
+            padding: 0px 0px;
+            display: flex;
+            align-items: stretch;
+            /* Important */
+            gap: 20px;
+            height: 100vh;
+            /* Full viewport height */
+        }
+
+        .slider-block {
+            width: 50%;
+            /* height: calc(100vh - 120px); */
+            height: 100vh;
+            /* Full height */
+        }
+
+        .slider-container {
+            height: 100%;
+            /* Fill the block */
+        }
+
+        .slider-container .slick-slide {
+            /* height: calc(100vh - 120px); */
+            /* Each slide full height */
+            height: 100vh;
+
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Cover without distortion */
+        }
+
+        .form-container {
+            width: 50%;
+            max-width: none;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Center form vertically */
+            margin: 30px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-group-single {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 0;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s ease;
+        }
+
+        .btn-orange {
+            background: linear-gradient(90deg, #ff512f, #f09819);
+        }
+
+        .btn-purple {
+            background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #7b2cbf;
+            color: #fff;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Slider -->
+        <div class="slider-block">
+            <div class="slider-container">
+                <div><img src="slide1.jpg" alt="Slide 1"></div>
+                <div><img src="slide2.png" alt="Slide 2"></div>
+                <div><img src="slide3.png" alt="Slide 3"></div>
+                <div><img src="slide4.jpg" alt="Slide 4"></div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="form-container">
+            <h2>Travel Enquiry Form</h2>
+            <div class="form-group">
+                <div style="flex:1">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Your First Name">
+                </div>
+                <div style="flex:1">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Your Last Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div style="flex:1">
+                    <label>Contact Number</label>
+                    <input type="text" placeholder="Mobile Number to contact you">
+                </div>
+                <div style="flex:1">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Valid Email Address">
+                </div>
+            </div>
+
+            <label>Travel Date <span style="color:red">*</span></label>
+            <div class="btn-group">
+                <button class="btn btn-orange">Travel Date</button>
+                <button class="btn btn-purple">Days</button>
+            </div>
+
+            <div class="form-group">
+                <div style="flex:1">
+                    <label>Number Of Adults*</label>
+                    <select>
+                        <option>Select Adults</option>
+                        <option>1 Adult</option>
+                        <option>2 Adults</option>
+                        <option>3 Adults</option>
+                    </select>
+                </div>
+                <div style="flex:1">
+                    <label>Number Of Childs</label>
+                    <select>
+                        <option>Select Child</option>
+                        <option>1 Child</option>
+                        <option>2 Childs</option>
+                        <option>3 Childs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-single">
+                <label>Your Message</label>
+                <textarea placeholder="Write here about your Enquiry!"></textarea>
+            </div>
+
+            <button class="btn-submit">PLAN YOUR TRIP NOW</button>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider-container').slick({
+                dots: false,
+                infinite: true,
+                speed: 600,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: false,
+                fade: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>

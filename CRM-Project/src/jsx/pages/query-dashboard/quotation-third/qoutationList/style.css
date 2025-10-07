@@ -1,0 +1,288 @@
+.bg-custom-green {
+  background-color: #008736;
+  color: white;
+  /* Ensure contrast for readability */
+}
+
+.queryconfirmed {
+  color: #3658b0;
+  background: rgb(44, 161, 204) !important;
+  cursor: pointer;
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.customgap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quotationheading {
+  color: rgba(76, 76, 76, 1);
+  font-size: 0.9em !important;
+  font-weight: 500 !important;
+}
+
+.quotationtext {
+  font-size: 0.8em !important;
+  font-weight: 500 !important;
+}
+
+.quotationtexts {
+  color: rgba(45, 45, 45, 1) !important;
+  font-size: 0.8em !important;
+  font-weight: 400 !important;
+}
+
+.quotationbuttonss {
+  color: rgba(45, 45, 45, 1);
+  font-size: 0.8em !important;
+  font-weight: 500 !important;
+}
+
+.operation {
+  background-color: #ff9900;
+  color: #ffffff;
+  border: none !important;
+}
+
+.paymentrequest {
+  border-color: #ef8f00;
+  color: #ef8f00;
+  border-radius: 2px;
+  font-size: 0.8em !important;
+  font-weight: 500 !important;
+}
+
+.tablepara td {
+  font-size: 10px;
+  font-weight: 500;
+  color: #3a3a3a;
+}
+
+.tablepara td {
+  border: #00aacf;
+}
+
+.quotationlist .tablepara {
+  border: black 0.5px solid;
+}
+
+.quotationlist .tablepara tr:hover {
+  background-color: black;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds subtle depth */
+}
+
+.tablepara td {
+  margin: 20px;
+}
+
+.makefinal {
+  border-color: #00aacf;
+  color: #00aacf;
+  border-radius: 1px solid #00aacf;
+  font-size: 0.8em !important;
+  font-weight: 500 !important;
+}
+
+.successicon {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.buttons {
+  background-color: #cfcfcf;
+  border: 0px !important;
+}
+
+.buttons:hover {
+  border-color: 2px solid #00aacf;
+  border-radius: 1px;
+  background-color: #cfcfcf;
+}
+
+.querydetails {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  /* color: #3a3a3a; */
+}
+
+.querydetailspara {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  /* color: #3a3a3a; */
+}
+
+.bordercolor {
+  border: 2px solid #00aacf;
+}
+
+.topbutton {
+  color: #909090;
+}
+
+.quotatation-shadows {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  /* subtle shadow effect */
+}
+
+.sidetables .th,
+.sidetables .td {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.8em!important;
+  line-height: 16.41px;
+  border: 0.5px solid rgba(204, 204, 204, 1);
+  /* Ensures borders of table cells collapse into a single line */
+}
+
+
+/* .table-bordereds th,
+.table-bordereds td {
+  border: 0.2px solid rgba(204, 204, 204, 1);
+} */
+
+.sidetables .tabless .col {
+  font-size: 0.9em !important;
+  /* Sets the font size */
+  font-weight: 500 !important;
+  /* color: rgba(58, 58, 58, 1); */
+  /* Sets the font weight */
+}
+
+.sidetables .rowww .col {
+  font-size: 0.8em !important;
+  font-weight: 400;
+  /* color: rgba(58, 58, 58, 1); */
+}
+
+.imagesicon {
+  margin-top: 15px !important;
+  margin-bottom: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quotationstate {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  /* color: #3a3a3a !important; */
+  line-height: 14.06px;
+}
+
+.number {
+  font-size: 0.8em;
+  font-weight: 500;
+  /* color: rgba(58, 58, 58, 1); */
+}
+
+.heading {
+  font-size: 0.9em;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  /* color: #3a3a3a; */
+}
+
+.headings {
+  font-size: 0.9em;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  /* color: rgba(99, 99, 99, 1); */
+}
+
+.Destination {
+  font-family: "Roboto", sans-serif;
+  /* line-height: 16.41px; */
+  letter-spacing: 2%;
+  /* color: #3a3a3a; */
+}
+
+@media (max-width: 767px) {
+  .quotationquery .col-2 {
+    display: block !important;
+    width: 30%;
+    text-align: center;
+    margin: 0px 5px;
+  }
+  .quotationquery .col-3 {
+    display: block !important;
+    width: 43%;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+  }
+  .quotationstateres {
+    text-align: center;
+  }
+  table {
+    width: 100%;
+  }
+  /* .quotationquery .col-3 {
+    display: block;
+    width: 100%;
+  }
+  .quotationquery .col-3 .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  .quotationbuttons button {
+    display: block;
+    width: fit-content;
+    padding: 0;
+    margin: auto;
+    /* Center the buttons */
+  }
+  .whatsapp-icon {
+    display: none;
+  }
+  .quotation-table {
+    display: block;
+    width: 100%;
+  }
+  .quatationdata {
+    display: block;
+    width: 100%;
+  }
+  /* .tabledata {
+    display: block;
+    width: 100%;
+  } */
+  table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 5px 0px 5px 0px;
+  }
+  .tablelist {
+    display: block;
+    width: 100%;
+  }
+  /* .quotationquery {
+        display: inline-flex;
+        width: 100%;
+    } */
+    
+}
+
+@media (min-width: 576px){
+  .quotationList .modal-dialog {
+    max-width: 550px !important;
+    margin: 1.75rem auto;
+  }
+  .hotelList .modal-dialog {
+    min-width: 55% !important;
+    margin: 1.75rem auto;
+  }
+}
+

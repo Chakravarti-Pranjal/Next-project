@@ -1,0 +1,126 @@
+/* Inputs-feilds */
+
+.online-feedback-report-mobile-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+.online-feedback-report-mobile-main-inputs-search {
+    width: 20%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 20px;
+}
+
+.online-feedback-report-mobile-main-inputs-search input {
+    background-color: #222;
+    color: #6E6E6E;
+    border: 1px solid #555;
+    padding: 8px
+}
+
+.online-feedback-report-mobile-main-inputs-search-inp {
+    border-radius: 5px;
+    /* height: 29px; */
+    /* padding: 1px; */
+}
+
+.online-feedback-report-mobile-main-inputs-paramtr {
+    width: 80%;
+    padding: 20px 10px 20px 60px;
+}
+
+.online-feedback-report-mobile-main-inputs-paramtr-flex {
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.online-feedback-report-mobile-main-inputs-paramtr-flex-slct {
+    width: 20%;
+}
+
+@media only screen and (min-width: 801px) and (max-width:1200px) {
+    .online-feedback-report-mobile-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .online-feedback-report-mobile-main-inputs-paramtr-flex-slct {
+        width: 20%;
+    }
+
+    .online-feedback-report-mobile-main-inputs-search {
+        width: 25%;
+    }
+
+    .online-feedback-report-mobile-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:800px) {
+    .online-feedback-report-mobile-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .online-feedback-report-mobile-main-inputs-paramtr-flex-slct {
+        width: 50%;
+    }
+
+    .online-feedback-report-mobile-main-inputs-search {
+        width: 25%;
+    }
+
+    .online-feedback-report-mobile-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width:599px) {
+    .online-feedback-report-mobile-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .online-feedback-report-mobile-main-inputs-paramtr-flex-slct {
+        width: 50%;
+    }
+
+    .online-feedback-report-mobile-main-inputs-search {
+        width: 25%;
+    }
+
+    .online-feedback-report-mobile-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    height: 35px;
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+

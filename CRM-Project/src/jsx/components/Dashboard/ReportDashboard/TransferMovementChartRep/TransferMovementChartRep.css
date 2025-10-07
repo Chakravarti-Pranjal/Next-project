@@ -1,0 +1,98 @@
+/* Inputs-feilds */
+
+.transfer-movement-chart-rep-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+
+.transfer-movement-chart-rep-main-inputs-paramtr {
+    padding: 20px 20px 20px 20px;
+}
+
+.transfer-movement-chart-rep-main-inputs-paramtr-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 5px;
+    width: 100%;
+}
+
+.transfer-movement-chart-rep-main-inputs-paramtr-flex-slct {
+    width: 14%;
+}
+
+@media only screen and (min-width:750px) and (max-width:1200px) {
+    .transfer-movement-chart-rep-main-inputs-paramtr-flex-slct {
+        width: 40%;
+    }
+
+    .transfer-movement-chart-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+
+    }
+
+}
+
+@media only screen and (max-width:749px) { 
+    .transfer-movement-chart-rep-main-inputs-paramtr-flex-slct {
+        width: 70%;
+    }
+
+    .transfer-movement-chart-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    
+    .transfer-movement-chart-rep-main-inputs-paramtr {
+        width: 80%;
+    }
+    
+    /* Search-container-width-in-small-screen */
+    /* .transfer-movement-chart-rep-main-inputs-search {
+        width: 20%;
+    }
+
+    .transfer-movement-chart-rep-main-inputs-search {
+        width: 30%;
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 25px;
+    } */
+
+    .transfer-movement-chart-rep-main-inputs-paramtr {
+        width: 70%;
+        padding: 10px 10px 10px 10px;
+    }
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+.transfer-movement-chart-rep-main-inputs-paramtr-flex-slct input {
+    color-scheme: dark;
+  }
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+

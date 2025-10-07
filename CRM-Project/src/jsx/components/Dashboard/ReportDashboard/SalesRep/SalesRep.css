@@ -1,0 +1,84 @@
+/* Inputs-feilds */
+
+.sales-rep-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+.sales-rep-main-inputs-paramtr {
+    width: 100%;
+    padding: 20px 10px 20px 60px;
+}
+
+.sales-rep-main-inputs-paramtr-flex {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.sales-rep-main-inputs-paramtr-flex-slct {
+    width: 20%;
+}
+
+@media only screen and (min-width:401px) and (max-width:1100px) {
+    .sales-rep-main-inputs-paramtr-flex-slct {
+        width: 48%;
+    }
+
+    .sales-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+        gap: 5px;
+
+    }
+
+
+}
+
+@media only screen and (max-width:400px) { 
+    .sales-rep-main-inputs-paramtr-flex-slct {
+        width: 100%;
+    }
+
+    .sales-rep-main-inputs-paramtr-flex {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .sales-rep-main-inputs-paramtr {
+        width: 70%;
+        padding: 20px 10px 20px 60px;
+    }
+
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+.sales-rep-main-inputs-paramtr-flex-slct input {
+    color-scheme: dark;
+}
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+

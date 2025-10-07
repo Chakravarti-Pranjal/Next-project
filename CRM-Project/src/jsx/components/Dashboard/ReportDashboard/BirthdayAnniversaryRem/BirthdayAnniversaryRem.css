@@ -1,0 +1,126 @@
+/* Inputs-feilds */
+
+.birthday-anni-rep-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+.birthday-anni-rep-main-inputs-search {
+    width: 15%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 20px;
+}
+
+.birthday-anni-rep-main-inputs-search input {
+    background-color: #222;
+    color: #6E6E6E;
+    border: 1px solid #555;
+    padding: 8px
+}
+
+.birthday-anni-rep-main-inputs-search-inp {
+    border-radius: 5px;
+    /* height: 29px; */
+    /* padding: 1px; */
+}
+
+.birthday-anni-rep-main-inputs-paramtr {
+    width: 85%;
+    padding: 20px 10px 20px 60px;
+}
+
+.birthday-anni-rep-main-inputs-paramtr-flex {
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.birthday-anni-rep-main-inputs-paramtr-flex-slct {
+    width: 40%;
+}
+
+@media only screen and (min-width: 801px) and (max-width:1200px) {
+    .birthday-anni-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .birthday-anni-rep-main-inputs-paramtr-flex-slct {
+        width: 40%;
+    }
+
+    .birthday-anni-rep-main-inputs-search {
+        width: 25%;
+    }
+
+    .birthday-anni-rep-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:800px) {
+    .birthday-anni-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .birthday-anni-rep-main-inputs-paramtr-flex-slct {
+        width: 50%;
+    }
+
+    .birthday-anni-rep-main-inputs-search {
+        width: 25%;
+    }
+
+    .birthday-anni-rep-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width:599px) {
+    .birthday-anni-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .birthday-anni-rep-main-inputs-paramtr-flex-slct {
+        width: 50%;
+    }
+
+    .birthday-anni-rep-main-inputs-search {
+        width: 25%;
+    }
+
+    .birthday-anni-rep-main-inputs-paramtr {
+        width: 75%;
+    }
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    height: 35px;
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+

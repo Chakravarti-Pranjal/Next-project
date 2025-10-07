@@ -1,0 +1,120 @@
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.step {
+  flex: 1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  /* padding: 0.5rem 2rem; */
+  background-color: #e0e0e0;
+  color: #7b7b7b;
+  text-align: center;
+  font-size: 0.8rem !important;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0 0, 86% 0, 100% 50%, 86% 100%, 0 100%, 14% 50%);
+  white-space: nowrap;
+  transition: flex 0.3s ease;
+}
+
+.step.completed {
+  background-color: #32ad80;
+}
+
+.step.active {
+  /* background: linear-gradient(
+    90deg,
+    rgb(254, 60, 60) 0%,
+    rgb(208, 53, 26) 100%
+  ); */
+  background: linear-gradient(90deg,
+      #20c997 10%,
+      #008080 100%);
+  color: white;
+}
+
+.step.upcoming {
+  background-color: #e0e0e0;
+  color: #7b7b7b;
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #4caf50;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+.step.active::after {
+  border-left-color: #0066cc;
+  /* Blue arrow for active step */
+}
+
+.step.upcoming::after {
+  border-left-color: #e0e0e0;
+  /* Grey arrow for upcoming step */
+}
+
+.step:first-child {
+  clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+}
+
+.step:last-child::after {
+  display: none;
+  /* No arrow after the last step */
+}
+
+/* Responsive behavior */
+
+@media (max-width: 991px) {
+  .stepper {
+    overflow-x: auto;
+  }
+
+  .stepper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepper {
+    overflow-x: auto;
+  }
+
+  .stepper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step {
+    min-width: 120px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .step {
+    flex: 1 1 10%;
+  }
+}
+
+@media (min-width: 1124px) {
+  .step {
+    flex: 1 1 12%;
+  }
+}

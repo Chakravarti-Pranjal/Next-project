@@ -1,0 +1,66 @@
+/* left to right */
+.nav-tabs .nav-link {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-weight: normal;
+  border-radius: 0;
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Add the red underline animation */
+.quatationNav.nav-tabs .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: var(--primary);
+  /* border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px; */
+  transition: width 0.4s ease;
+}
+
+/* When active, expand the red underline */
+.nav-tabs .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  background-color: #202020;
+  padding: 4px;
+  border-radius: 12px 12px 0 0;
+}
+
+
+
+/* .card-header-tabs .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #007bff;
+} */
+
+
+
+/* only for [data-theme-version="light"] */
+
+
+[data-theme-version="light"] .nav-tabs {
+  background-color: #f9f9f9;
+}
+
+[data-theme-version="light"] .nav-tabs .nav-link {
+  color: #333;
+}
+
+[data-theme-version="light"] .nav-tabs .nav-link.active {
+  color: #007bff;
+}

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 0;
+
+        }
+
+        .container {
+            width: 90%;
+            margin: 10px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: #e23428;
+            color: white;
+            padding: 7px;
+            border-radius: 5px 5px 0 0;
+           
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .details {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .details div {
+            flex: 1;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 3px;
+            text-align: left;
+            font-size: 12px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .totals-row {
+            background-color: #f9f9f9;
+            font-weight:lighter;
+        }
+
+
+
+       
+
+        .export-btn :hover {
+            background-color:  #e23428;
+        }
+
+        .sub-section {
+            margin-top: 20px;
+        }
+
+        .sub-section .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sub-section .column {
+            width: 48%;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 7px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .column h2 {
+            text-align: left;
+           
+            font-size: 14px;
+        }
+
+        .totals-table {
+            margin-top: 10px;
+        } 
+        .button-container {
+  text-align: end;
+}
+
+.custom-button {
+  background: linear-gradient(135deg, #e23428,#e23428);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.custom-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.custom-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header" style="display:flex ; justify-content: space-between;">
+            <h1  style="text-align: center; padding-top: 5px; ">COST SHEET | DB24-25/000725/A</h1>
+                 
+                <button class="export-btn" style="background-color: white;
+                color: #e23428;
+                border-radius: 10px;
+                cursor: pointer;
+                padding: 5px 10px;
+                outline: none;
+                border: 1px solid lightgray;" 
+                >Export</button>
+            
+        </div>
+
+       
+
+        <div class="details">
+            <div>
+                <p><strong>Tour ID:</strong> 25/01/0284/AD</p>
+                <p><strong>Arrival Date:</strong> 15 January, 2025</p>
+                <p><strong>Agent Name:</strong> Praveen Kumar Sharma</p>
+                <p><strong>Lead Pax Name:</strong> </p>
+            </div>
+            <div>
+                <p><strong>Operation Person:</strong> Anshul Sharma</p>
+                <p><strong>Sales Person:</strong> Administrator CRM</p>
+                <p><strong>R.O.E.:</strong> INR 1.00 As on: 10-01-2025</p>
+                <p><strong>Printed On:</strong> 20-01-2025 11:24 AM</p>
+            </div>
+        </div>
+        <u></u>
+          <div style="text-align: center; padding: 5px;"><strong> Cost Sheet Details </strong></div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day/Date</th>
+                        <th>City</th>
+                        <th>Hotels</th>
+                        <th colspan="7">Hotel Rates</th>
+                        <th>Train</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>SGL</td>
+                        <td>DBL</td>
+                        <td>TPL</td>
+                        <td>TWN</td>
+                        <td>B</td>
+                        <td>L</td>
+                        <td>D</td>
+                        <td>21640</td>
+                    </tr> 
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>Guest: The Oberoi, New Delhi (Deluxe room)</td>
+                        <td>000.00x2</td>
+                        <td>4000.00x2</td>
+                        <td>4000.00x0</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>4000.00x2</td>
+                    </tr>
+                    <tr>
+                        <td>D03 - 17-01-2025</td>
+                        <td>Agra</td>
+                        <td>Guest: Jaipur Central Hotel (Premier Room)</td>
+                        <td>000.00x2</td>
+                        <td>4000.00x2</td>
+                        <td>4000.00x0</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>4000.00x2</td>
+                    </tr>
+                    <tr>
+                        <td>D04 - 18-01-2025</td>
+                        <td>Agra</td>
+                        <td>Guest: Jaipur Central Hotel (Premier Room)</td>
+                        <td>000.00x2</td>
+                        <td>4000.00x2</td>
+                        <td>4000.00x0</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>4000.00x2</td>
+                    </tr>
+                    <tr>
+                        <td>D05 - 19-01-2025</td>
+                        <td>Jaipur</td>
+                        <td>Guest: The Oberoi Rajvilas (Deluxe room)</td>
+                        <td>000.00x2</td>
+                        <td>4000.00x2</td>
+                        <td>4000.00x0</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>4000.00x2</td>
+                        
+                    </tr>
+                    <tr class="totals-row">
+                        <td colspan="3">Total</td>
+                        <td>156000.00</td>
+                        <td>000.00x2</td>
+                        <td>4000.00x2</td>
+                        <td>4000.00x0</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        <td>0000.00x2</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day/Date</th>
+                        <th>City</th>
+                        <th>Transportation</th>
+                        <th >Guide</th>
+                        <th>Activity/Exp.</th>
+                        <th>Monument</th>
+                        <th>Resturant</th>
+                        <th colspan="2">Additional</th>
+                        <th colspan="3">Per Pax</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>4 Pax</td>
+                        <td>4 Pax</td>
+                        <td>4 Pax</td>
+                        <td>Adult</td>
+                        <td>Adult</td>
+                        <td>Adult</td>
+                        <td>Group</td>
+                        <td>Enroute</td>
+                        <td>Tour Escort</td>
+                        <td>Porter</td>
+                    </tr> 
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                    </tr>
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                    </tr>
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                    </tr>
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>D02 - 16-01-2025</td>
+                        <td>Delhi</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        
+                    </tr>
+                    <tr class="totals-row">
+                        <td colspan="2">Total</td>
+                        <td>156000.00</td>
+                        <td>21640</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>560.0</td>
+                        <td>00.0</td>
+                        <td>00.0</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+
+        <div class="sub-section">
+            <div class="row">
+                <div class="column">
+                    <h2 style="font-size: 14px;">Per Pax Cost</h2>
+                    <table class="totals-table">
+                        <tr>
+                            <td>Meal+B+L+D+A</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Train</td>
+                            <td>5410.00</td>
+                        </tr>
+                        <tr>
+                            <td>Porter</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Enroute</td>
+                            <td>2000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Activities</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Monuments</td>
+                            <td>1300.00</td>
+                        </tr>
+                        <tr>
+                            <td>Additionls</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr class="totals-row">
+                            <td>Total Land Arrangment Cost (INR)</td>
+                            <td>8710.00</td>
+                        </tr>
+                        <tr>
+                            <td>Transport</td>
+                            <td>140.00</td>
+                        </tr>
+                        <tr>
+                            <td>Guide</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tour Escort</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr class="totals-row">
+                            <td>Total Transport/Guide/Escort Cost (INR)</td>
+                            <td>140.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column">
+                    <h2 style="font-size: 14px;">General Info</h2>
+                    <table class="totals-table">
+                        <tr>
+                            <td>Adult Pax</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Child Pax</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Local Escort Pax</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Foreign Escort Pax</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Double Room</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>MarkUp (%)</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Discount(%)</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>IGST(%)</td>
+                            <td>5</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column" style="width: 100%; ">
+                    <h2 style="text-align:center; margin-top: 3px; font-size: 14px;">Total Tour Cost (4 Pax)</h2>
+                    <table class="totals-table">
+                        <tr>
+                            <td>Itinerary Services</td>
+                            <td>Unit Cost</td>
+                            <td>Volume Type</td>
+                            <td>Qty Total</td>
+                            <td>Total Cost</td>
+                        </tr>
+                        <tr>
+                            <td>Double Room</td>
+                            <td>156000.00</td>
+                            <td>-</td>
+                            <td>156000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Land Arrangement (Adult)</td>
+                            <td>8710.00</td>
+                            <td>Pax</td>
+                            <td>4</td>
+                            <td>34840.00</td>
+                        </tr>
+                        <tr>
+                            <td>Transport/Guide (Adult)</td>
+                            <td>140.00</td>
+                            <td>D.F.</td>
+                            <td>4</td>
+                            <td>560.00</td>
+                        </tr>
+                        <tr class="totals-row">
+                            <td>Cost of the Trip (INR)</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>191400.00</td>
+                        </tr>
+                        <tr>
+                            <td>(+) MarkUp (25%)</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>47850.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <h2 style="font-size: 12px;">PER PAX COST</h2>
+<table>
+  <tr>
+    <th>Occupancy</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>Per Person Cost On Double Basis</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 style="font-size: 12px;">TRR & SRS</h2>
+<table>
+  <tr>
+    <th>Occupancy Type</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>Tripple Room Reduction</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 style="font-size: 12px;">TRANSPORT BREAK-UP COST(IN INR)</h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>City</th>
+    <th>Service Name</th>
+    <th>(4 Pax)</th>
+  </tr>
+  <tr>
+    <td>01-04-2024</td>
+    <td>Delhi</td>
+    <td>Transfer | Airport to Hotel | SUV - Innova</td>
+    <td>6080.40</td>
+  </tr>
+  <tr>
+    <td>15-01-2025</td>
+    <td>Delhi</td>
+    <td>Transportation | Delhi to Chicago | 12 seater Traveller</td>
+    <td>560.00</td>
+  </tr>
+  <tr>
+    <td>Total Transport Cost</td>
+    <td></td>
+    <td></td>
+    <td>6640.40</td>
+  </tr>
+</table>
+
+<h2 style="font-size: 12px;">TRAIN BREAK-UP COST</h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>City</th>
+    <th>Service Name</th>
+    <th>Adult Cost(In INR)</th>
+    <th>No. of Adult</th>
+    <th>Total Cost</th>
+    <th>Child Cost(In INR)</th>
+    <th>No. of Child</th>
+    <th>Total Cost</th>
+  </tr>
+  <tr>
+    <td>15-01-2025</td>
+    <td>Delhi</td>
+    <td>Amravati Express</td>
+    <td>5410 <td>2</td>
+    <td>10820</td>
+    <td>2705</td>
+    <td>1</td>
+    <td>2705</td>
+  </tr>
+  <tr>
+    <td>Total Train Cost</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>13525</td>
+    <td></td>
+    <td></td>
+    <td>2705</td>
+  </tr>
+</table>
+
+<h2 style="font-size: 12px;">Monument Break-up Cost (IN INR) </h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>City</th>
+    <th>Service Name</th>
+    <th>Adult Cost</th>
+    <th>No. of Adults</th>
+    <th> Total Cost</th>
+    <th>Child Cost</th>
+    <th>No. of Child</th>
+    <th> Total Cost</th>
+
+
+  </tr>
+  <tr>
+   <td>16-01-2025</td>
+   <td>Delhi</td>  
+    <td>Qutub Minar</td>
+    <td>1000.0</td>
+    <td>00.0</td>
+    <td>00.0</td>
+    <td>500.0</td>
+    <td>00.0</td>
+    <td>00.0</td>
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+    <td>Delhi</td>  
+     <td>Qutub Minar</td>
+     <td>1000.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+     <td>500.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+    <td>Delhi</td>  
+     <td>Qutub Minar</td>
+     <td>1000.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+     <td>500.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+    <td>Delhi</td>  
+     <td>Qutub Minar</td>
+     <td>1000.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+     <td>500.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+    <td>Delhi</td>  
+     <td>Qutub Minar</td>
+     <td>1000.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+     <td>500.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+    <td>Delhi</td>  
+     <td>Qutub Minar</td>
+     <td>1000.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+     <td>500.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+    <td>Delhi</td>  
+     <td>Qutub Minar</td>
+     <td>1000.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+     <td>500.0</td>
+     <td>00.0</td>
+     <td>00.0</td>
+
+  </tr>
+  <tr>
+    <td>16-01-2025</td>
+   <td>Delhi</td>  
+    <td>Qutub Minar</td>
+    <td>1000.0</td>
+    <td>00.0</td>
+    <td>00.0</td>
+    <td>500.0</td>
+    <td>00.0</td>
+    <td>00.0</td>
+
+  </tr>
+
+</table>
+<h2 style="font-size: 12px;">Activity Break-Up Cost</h2>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>City</th>
+        <th>Service Name</th>
+        <th colspan="3">4 Pax</th>
+    </tr>
+    <tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Activity Cost</td>
+<td>No. of Activity</td>
+<td>Total Cost</td>
+    </tr>
+    <tr>
+        <td>16-01-2025</td>
+        <td>Delhi</td> 
+        <td>Cycle Rickshaw Ride</td>
+        <td>2000</td>
+        <td>1</td>
+        <td>2000</td>
+    </tr>
+
+</table>
+<h2 style="font-size: 12px;">Resturant Break-Up Cost</h2>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>City</th>
+        <th>Service Name</th>
+        <th>Adult Cost</th>
+        <th>No. of Adults</th>
+        <th> Total Cost</th>
+        <th>Child Cost</th>
+        <th>No. of Child</th>
+        <th> Total Cost</th> 
+    </tr>
+    <tr>
+        <td>16-01-2025</td>
+        <td>Delhi</td>  
+         <td>The Salt Cafe Kitchen and Bar</td>
+         <td>1000.0</td>
+         <td>00.0</td>
+         <td>00.0</td>
+         <td>500.0</td>
+         <td>00.0</td>
+         <td>00.0</td>
+    </tr>
+    <tr>
+        <td>16-01-2025</td>
+        <td>Delhi</td>  
+         <td>The Salt Cafe Kitchen and Bar</td>
+         <td>1000.0</td>
+         <td>00.0</td>
+         <td>00.0</td>
+         <td>500.0</td>
+         <td>00.0</td>
+         <td>00.0</td>
+    </tr>
+
+</table>
+<h2 style="font-size: 12px;">Enroute Break-Up Cost</h2>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>City</th>
+        <th>Service Name</th>
+        <th>Service Cost</th>
+    </tr>
+    <tr>
+        <td>16-01-2025</td>
+        <td>Delhi</td> 
+        <td>Fatehpur Sikri</td>
+        <td>2000</td>
+    </tr>
+    <tr>
+        <td>16-01-2025</td>
+        <td>Delhi</td> 
+        <td>Fatehpur Sikri</td>
+        <td>2000</td>
+    </tr>
+</table>
+<h2 style="font-size: 16px;">Meal Suppliment(Per Person)</h2>
+<div class="header" style="display:flex">
+    <h1  style="text-align: start;">Meal Suppliment</h1>
+    </div>
+    <table>
+        <tr>
+            <th style="background-color: #e23428; color: white; text-align: center; width: 90%;">Supplement/Reduction</th>
+            <th style="background-color: #e23428; color: white; text-align: center;" >Double</th>
+        </tr>
+        <tr>
+            <td>Meal Reducting from (CP) to ()</td>
+           <td>0</td>
+        </tr>
+        <tr>
+            <td>Meal Reducting from (CP) to ()</td>
+            <td>0</td>
+            
+        </tr>
+        <tr>
+            <td>Meal Reducting from (CP) to ()</td>
+            <td>0</td>
+            
+        </tr>
+        <tr>
+            <td>Meal Reducting from (CP) to ()</td>
+            <td>0</td>
+            
+        </tr>
+        <tr>
+
+            <td>Meal Reducting from (CP) to ()</td>
+            <td>0</td>
+            
+        </tr>
+    </table>
+    <div class="button-container">
+        <button class="custom-button">Close</button>
+      </div>
+    </div>
+
+
+</body>
+</html>

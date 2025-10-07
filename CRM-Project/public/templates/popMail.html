@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Preview Page</title>
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: white;
+      font-size: 14px;
+    }
+
+    .preview-header {
+      background-color: #342221;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .info-section {
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .info-label {
+      font-weight: bold;
+    }
+
+    .query-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .query-id {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 4px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #555;
+      color: white;
+      text-align: center;
+    }
+
+    .button-row {
+      margin-top: 20px;
+      display: flex;
+      justify-content: right;
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .send-btn {
+      background-color: red;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #ddd;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .button1 {
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 20px;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    .copy {
+      margin-right: 20px;
+      border-radius: 5px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+      z-index: 1000;
+      font-size: 14px;
+    }
+
+    .ck-editor__editable {
+      min-height: 200px;
+      font-size: 14px;
+    }
+
+    .subject {
+      display: flex;
+      justify-content: left;
+      text-align: left;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .subject strong {
+      margin-right: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .subjects {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="notification" id="copyNotification">Copied to clipboard!</div>
+  <div id="contentToCopy">
+    <div class="preview-header">PREVIEW</div>
+
+    <div class="info-section">
+      <span class="info-label">Client:</span> <span id="clientName"></span> &nbsp;&nbsp;
+      <span class="info-label">Email:</span> <span id="emailName"></span> &nbsp;&nbsp;
+      <span class="info-label">Operation Person:</span> <span id="operationPerson"></span> &nbsp;&nbsp;
+      <span class="info-label">Sales Person:</span> <span id="salesPerson"></span> &nbsp;&nbsp;
+      <span class="info-label">Group:</span> <span id="groupName"></span>
+    </div>
+
+    <div class="subject"><strong>Subject:</strong><span id="subjectDisplay"></span></div>
+    <p>Destination:</p>
+
+    <div class="query-box" id="contentToCopys">
+      <div class="query-id">QueryId: <span id="queryId" style="color:#000; font-weight: bold;"></span></div>
+
+      <div id="editor"></div>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="subjects">Subject</th>
+            <th>Adult</th>
+            <th>Child</th>
+            <th>Infant</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="subject" class="subjects"></td>
+            <td id="adult"></td>
+            <td id="child"></td>
+            <td id="infant"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:15px;"><strong>Destinations</strong></div>
+      <table>
+        <thead>
+          <tr>
+            <th>S.N.</th>
+            <th>Date</th>
+            <th>Destination</th>
+          </tr>
+        </thead>
+        <tbody id="destinationsDataBody">
+          <tr>
+            <td colspan="3">No destination data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="button-row">
+    <button class="copy" id="copyButton">Copy</button>
+    <button class="button1 send-btn" id="outlookButton">
+      <img src="microsoft-outlook-icon.png" alt="microsoft-outlook-icon">
+    </button>
+    <button class="button send-btn" onclick="sendMail()">Send</button>
+  </div>
+
+  <script>
+    let editor;
+    let popupData;
+
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return { data: params.get("data") };
+    }
+
+    function showNotification() {
+      const notification = document.getElementById('copyNotification');
+      notification.style.display = 'block';
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 2000);
+    }
+
+    function copyToClipboard() {
+      const contentToCopy = document.getElementById('contentToCopy');
+      const range = document.createRange();
+      range.selectNode(contentToCopy);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          showNotification();
+        } else {
+          alert('Failed to copy content. Please try again.');
+        }
+      } catch (err) {
+        alert('Error copying content: ' + err);
+      }
+
+      window.getSelection().removeAllRanges();
+    }
+
+    function openInOutlook() {
+      if (!window.contactEmail) {
+        alert("No email address found to send to!");
+        return;
+      }
+
+      const queryId = document.getElementById("queryId").textContent;
+      const messageContent = editor.getData().replace(/<[^>]*>?/gm, ''); // Strip HTML
+
+      const body = encodeURIComponent(messageContent);
+      const subject = encodeURIComponent(`Proposal for ${queryId}`);
+
+      const mailtoLink = `mailto:${window.contactEmail}?subject=${subject}&body=${body}`;
+
+      // Try opening mailto
+      try {
+        window.location.href = mailtoLink;
+      } catch (err) {
+        alert("Could not open Outlook. Make sure it's your default email client.");
+      }
+    }
+
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const { data } = getQueryParams();
+    //   if (!data) {
+    //     alert("No data received!");
+    //     return;
+    //   }
+
+    //   try {
+    //     popupData = JSON.parse(decodeURIComponent(data));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const storedData = localStorage.getItem("popupData");
+      if (!storedData) {
+        alert("No popup data found in localStorage!");
+        return;
+      }
+
+      try {
+        popupData = JSON.parse(storedData); // ✅ Assign to outer scoped variable
+        console.log(popupData,"popupData");
+        
+        localStorage.removeItem("popupData"); // Optional: remove after use
+
+        document.getElementById("clientName").textContent = popupData.clientName;
+        document.getElementById("emailName").textContent = popupData.ContactEmail;
+        document.getElementById("operationPerson").textContent = popupData.operationPerson || '-';
+        document.getElementById("salesPerson").textContent = popupData.salesPerson;
+        document.getElementById("groupName").textContent = popupData.groupName;
+        document.getElementById("queryId").textContent = popupData.queryId;
+
+        const subjectText = `${popupData.queryId}  ${popupData.clientName}`;
+        document.getElementById("subject").textContent = subjectText;
+        document.getElementById("subjectDisplay").textContent = subjectText;
+
+        document.getElementById("adult").textContent = popupData.adult;
+        document.getElementById("child").textContent = popupData.child;
+        document.getElementById("infant").textContent = popupData.infant;
+
+        window.contactEmail = popupData.ContactEmail;
+
+        ClassicEditor.create(document.querySelector('#editor')).then(instance => {
+          editor = instance;
+          if (popupData.body) {
+            let msg = popupData.body
+              .replace("{Name}", popupData.clientName)
+              .replace("{QueryNumber}", popupData.queryId)
+              .replace("{PaxNumber}", popupData.totalPax)
+              .replace("{BusinessType}", popupData.BusinessType);
+            editor.setData(msg);
+          }
+        });
+
+        const destinationsDataBody = document.getElementById("destinationsDataBody");
+        if (popupData.destinationsData && popupData.destinationsData.length > 0) {
+          destinationsDataBody.innerHTML = '';
+          popupData.destinationsData.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${item.date || '-'}</td>
+              <td>${item.destination || '-'}</td>
+            `;
+            destinationsDataBody.appendChild(row);
+          });
+        }
+
+        document.getElementById('copyButton').addEventListener('click', copyToClipboard);
+        document.getElementById('outlookButton').addEventListener('click', openInOutlook);
+      } catch (error) {
+        console.error("Error parsing data:", error);
+        alert("Error processing data. Please try again.");
+      }
+    });
+
+    function sendMail() {
+      const emailId = window.contactEmail;
+      if (!emailId) {
+        alert("No email address found to send to!");
+        return;
+      }
+
+      const emailBody = editor.getData();
+
+      const payload = {
+        ConfigId: "8",
+        MailType: "3",
+        To: emailId,
+        Subject: document.getElementById("queryId").textContent || "Default Subject",
+        Body: emailBody,
+        Attachment: "s"
+      };
+
+      // fetch("send-email", {
+      fetch("query-send-mail", {
+
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(response => {
+          if (!response.ok) throw new Error("Network response was not ok");
+          return response.json();
+        })
+        .then(() => alert("Email sent successfully!"))
+        .catch(error => {
+          console.error("Error sending email:", error);
+          alert("Failed to send email. Please try again.");
+        });
+    }
+  </script>
+</body>
+
+</html>

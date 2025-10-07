@@ -1,0 +1,45 @@
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.addBtn,
+.removeBtn {
+  background-color: transparent;
+  border: 1px solid rgb(65, 65, 65);
+  color: #fff;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ✅ Light Theme Buttons */
+[data-theme-version="light"] .addBtn,
+[data-theme-version="light"] .removeBtn {
+  border: 1px solid #ccc7c7;
+  color: #6e6e6e;
+}
+
+[data-theme-version="light"] .addBtn:hover,
+[data-theme-version="light"] .removeBtn:hover {
+  border-color: #999;
+}
+
+/* ✅ Dark Theme Buttons */
+[data-theme-version="dark"] .addBtn,
+[data-theme-version="dark"] .removeBtn {
+  border: 1px solid rgb(65, 65, 65);
+  color: #fff;
+}
+
+[data-theme-version="dark"] .addBtn:hover,
+[data-theme-version="dark"] .removeBtn:hover {
+  border-color: #666;
+}

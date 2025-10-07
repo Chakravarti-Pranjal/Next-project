@@ -1,0 +1,124 @@
+/* Inputs-feilds */
+
+.incoming-tour-status-rep-main-inputs {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    border-top: 1px solid #6E6E6E;
+}
+
+.incoming-tour-status-rep-main-inputs-search {
+    width: 15%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 20px;
+}
+
+.incoming-tour-status-rep-main-inputs-search input {
+    background-color: #222;
+    color: #6E6E6E;
+    border: 1px solid #555;
+    padding: 8px
+}
+
+.incoming-tour-status-rep-main-inputs-search-inp {
+    border-radius: 5px;
+    /* height: 29px; */
+    /* padding: 1px; */
+}
+
+.incoming-tour-status-rep-main-inputs-paramtr {
+    width: 85%;
+    padding: 20px 10px 20px 60px;
+}
+
+.incoming-tour-status-rep-main-inputs-paramtr-flex {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 5px;
+}
+
+.incoming-tour-status-rep-main-inputs-paramtr-flex-slct {
+    width: 100%;
+}
+
+@media only screen and (min-width:750px) and (max-width:1100px) {
+    .incoming-tour-status-rep-main-inputs-paramtr-flex-slct {
+        width: 40%;
+    }
+
+    .incoming-tour-status-rep-main-inputs-paramtr-flex {
+        flex-wrap: wrap;
+    }
+
+    .incoming-tour-status-rep-main-inputs-search {
+        width: 30%;
+    }
+
+    .incoming-tour-status-rep-main-inputs-paramtr {
+        width: 70%;
+    }
+
+
+}
+
+@media only screen and (max-width:749px) { 
+    .incoming-tour-status-rep-main-inputs-paramtr-flex-slct {
+        width: 100%;
+    }
+
+    .incoming-tour-status-rep-main-inputs-paramtr-flex {
+        flex-direction: column;
+    }
+
+    .incoming-tour-status-rep-main-inputs-search {
+        width: 20%;
+    }
+
+    .incoming-tour-status-rep-main-inputs-paramtr {
+        width: 80%;
+    }
+    
+    /* Search-container-width-in-small-screen */
+    .incoming-tour-status-rep-main-inputs-search {
+        width: 30%;
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 25px;
+    }
+
+    .incoming-tour-status-rep-main-inputs-paramtr {
+        width: 70%;
+        padding: 20px 10px 20px 60px;
+    }
+}
+
+.form-select-input {
+    background-color: #222222;
+    color: white;
+    height: 35px;
+}
+
+.form-control-date {
+    background-color: #222222 !important;
+    color: white !important;
+}
+
+.incoming-tour-status-rep-main-inputs-paramtr-flex-slct input {
+    color-scheme: dark;
+}
+
+/* form-button */
+
+.form-control-btn {
+    background-color: #ff2802 !important;
+    color: white !important;
+    height: 35px;
+}
+
+.form-control-btn:hover {
+    background-color: #fa3917 !important;
+}
+
+

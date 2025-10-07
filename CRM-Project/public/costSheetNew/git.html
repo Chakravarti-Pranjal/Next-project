@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CostSheet-GIT</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 210mm; /* A4 width */
+        height: 297mm; /* A4 height */
+        box-sizing: border-box;
+        background: #fff;
+      }
+
+      .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10mm; /* Add padding to avoid content touching edges */
+        box-sizing: border-box;
+      }
+
+
+      .header {
+        background: #e23428;
+        color: white;
+        padding: 5px;
+        border-radius: 5px 5px 0 0;
+        text-align: center;
+      }
+
+      .headers h1 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .details {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+
+      .details div {
+        flex: 1;
+      }
+
+      .table-container {
+        overflow-x: auto;
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 5px;
+        font-size: 10px; /* Smaller font size for tables */
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 3px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+
+      .totals-row {
+        background-color: #f9f9f9;
+        font-weight: lighter;
+      }
+
+      .export-btn:hover {
+        background-color: #e23428;
+      }
+
+      .sub-section {
+        margin-top: 10px;
+      }
+
+      .sub-section .row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sub-section .column {
+        width: 48%;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .column h2 {
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .totals-table {
+        margin-top: 10px;
+      }
+
+      .button-container {
+        text-align: end;
+      }
+
+      .custom-button {
+        background: linear-gradient(135deg, #e23428, #e23428);
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        font-size: 10px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin-top: 5px;
+      }
+
+      .custom-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .custom-button:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Ensure tables fit within A4 width */
+      table {
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      th,
+      td {
+        word-wrap: break-word;
+      }
+
+      /* Adjust font sizes for better readability */
+      body {
+        font-size: 10px;
+      }
+
+      h1 {
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div
+        class="header"
+        style="
+          display: flex;
+          justify-content: space-between;
+          border: 2px solid lightgrey;
+        "
+      >
+        <div>
+          <h1 style="text-align: center; padding-top: 5px">Cost Sheet: 65204 </h1>
+          
+        </div>
+
+        <div> <p style="margin: 0px;margin-right: 50px; font-size: 0.75rem">
+            COST SHEET: 65204 A PORTRAIT OF INDIA 2025/Option 1 <br>
+            Created Date: 09-01-2025 17:39:40 (V-1)
+          </p>
+          
+        </div>
+        <button class="export-btn" style="background-color: white;
+                color: #e23428;
+                border-radius: 10px;
+                cursor: pointer;
+                padding: 2px 10px;
+                outline: none;
+                border: 1px solid lightgray;" 
+                >Export</button>
+      </div>
+      <div class="table-container">
+        <table style="margin-top: 0px; border: 1px solid lightgrey">
+       <tbody>
+         <tr>
+           <td style="border: 1px solid grey">
+            Client Name: Morris Murdock Escorted Tours & LDS Travel Study (ForeignAgent)
+           </td>
+           <td style="border: 1px solid grey">
+            Duration:10N-11D Start Date:Wednesday, 03-Dec2025
+           </td>
+           <td style="border: 1px solid grey">Country: United States</td>
+           <td style="border: 1px solid grey">Issue Date: 09-Jan-25</td>
+           <td style="border: 1px solid grey">5 PAX UPTO: Multiple</td>
+           <td style="border: 1px solid grey">Currency : USD</td>
+           <td style="border: 1px solid grey">Exchange @: 79.5</td>
+           <td style="border: 1px solid grey">Tour Type: GIT</td>
+         </tr>
+       </tbody>
+     </table>
+      </div>
+         <div class="table-container">
+              <table style="margin-top: 0px; border: 1px solid lightgrey">
+                  <thead>
+                    <tr>
+                      <th>Day</th>
+                      <th>Air /
+                        Train</th>
+                      <th>Sector</th>
+                      <th >Hotel</th>
+                      <th>DBL</th>
+                      <th>SGL</th>
+                      <th>Ex-Bd</th>
+                      <th>Room Type</th>
+                      <th>Meal Plan</th>
+                      <th>B</th>
+                      <th>L</th>
+                      <th>D</th>
+                      <th colspan="3">Transport</th>
+                      <th colspan="4">Guide</th>
+                      <th>Escort</th>
+                      <th>Entrance</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Program</th>
+                        <th>AC 
+                            Volvo</th>
+                        <th>Misc</th>
+                        <th>017+0
+                            2</th>
+                        <th>022+0
+                            2</th>
+                        <th>026+0
+                            2</th>
+                        <th>031+0
+                            2</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                       <td>1:W:3Dec</td>
+                       <td></td>
+                       <td>Arrive Delhi</td>
+                       <td>Crowne Plaza New Delhi
+                        Okhla (New Delhi)</td>
+                       <td>9000 #</td>   
+                       <td>9000 #</td>
+                       <td> 0 #</td>
+                       <td>Deluxe
+                        Room</td>
+                       <td>CP</td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td>10 nights / 11 days outstaion
+                        (Rajasthan/Agra) [ Delhi
+                        (Pkg)</td>
+                       <td>230000
+                        *</td>
+                       <td>2000(A)</td>
+                       <td></td>
+                       <td> </td>
+                       <td> </td>
+                       <td> </td>
+                       <td>5000</td>
+                       <td> </td>
+                     </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td>2:T:4Dec</td>
+                      <td></td>
+                      <td>Delhi</td>
+                      <td>Crowne Plaza New Delhi
+                        Okhla (New Delhi)</td>
+                      <td>11500 #</td>   
+                      <td>10000 #</td>
+                      <td> 0 #</td>
+                      <td>Deluxe
+                        Room</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td>5000</td>
+                      <td>600 * </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>3:F:5Dec</td>
+                      <td></td>
+                      <td>Agra</td>
+                      <td>Courtyard By Marriott
+                        (Agra, Uttar Pradesh)</td>
+                      <td>15200 #</td>   
+                      <td>13500 #</td>
+                      <td> 0 #</td>
+                      <td>Premium</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td>81900</td>
+                      <td>310  </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>4:S:6Dec</td>
+                      <td></td>
+                      <td>Agra</td>
+                      <td>Courtyard By Marriott
+                        (Agra, Uttar Pradesh)</td>
+                      <td>15200 #</td>   
+                      <td>13500 #</td>
+                      <td> 0 #</td>
+                      <td>Premium</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td></td>
+                      <td>1910 *  </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>5:S:7Dec</td>
+                      <td></td>
+                      <td>Dausa / Ranthambore</td>
+                      <td></td>
+                      <td></td>   
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td></td>
+                      <td> </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>The Tigress Spa & Resort
+                        (Rajasthan)</td>
+                      <td>15000 #</td>   
+                      <td>15000 #</td>
+                      <td> 0 #</td>
+                      <td>Royal
+                        Villa</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td></td>
+                      <td> </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>6:M:8Dec</td>
+                      <td></td>
+                      <td>Ranthambore</td>
+                      <td>The Tigress Spa & Resort
+                        (Rajasthan)</td>
+                      <td>16000 #</td>   
+                      <td>16000 #</td>
+                      <td> 0 #</td>
+                      <td>Royal
+                        Villa</td>
+                      <td>AP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td></td>
+                      <td> </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>7:T:9Dec</td>
+                      <td></td>
+                      <td>Jaipur</td>
+                      <td>Hilton Jaipur (Rajasthan)</td>
+                      <td>14500 #</td>   
+                      <td>13500 #</td>
+                      <td> 0 #</td>
+                      <td>Guest
+                        Room</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td></td>
+                      <td> </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>8:W:10Dec</td>
+                      <td></td>
+                      <td>Jaipur</td>
+                      <td>Hilton Jaipur (Rajasthan)</td>
+                      <td>14500 #</td>   
+                      <td>13500 #</td>
+                      <td> 0 #</td>
+                      <td>Guest
+                        Room</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td></td>
+                      <td>1500 </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>9:T:11Dec</td>
+                      <td></td>
+                      <td>Mumbai</td>
+                      <td>President, Mumbai
+                        (Maharashtra)</td>
+                      <td>17700 #</td>   
+                      <td>15340 #</td>
+                      <td> 0 #</td>
+                      <td>Deluxe</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>(Pkg)</td>
+                      <td>74000 #</td>
+                      <td>500(A)</td>
+                      <td>5250 *</td>
+                      <td>5250 * </td>
+                      <td> 5250 *</td>
+                      <td>5250 * </td>
+                      <td></td>
+                      <td> </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>10:F:12Dec</td>
+                      <td></td>
+                      <td>Mumbai</td>
+                      <td>President, Mumbai
+                        (Maharashtra)</td>
+                      <td>17700 #</td>   
+                      <td>15340 #</td>
+                      <td> 0 #</td>
+                      <td>Deluxe</td>
+                      <td>MAP</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>700 * </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>11:S:13Dec</td>
+                      <td></td>
+                      <td>Mumbai Depart</td>
+                      <td></td>
+                      <td></td>   
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                 </tbody>
+                 <thead>
+                    <tr>
+                        <th></th>
+                        <th>10500</th>
+                        <th colspan="2">Total</th>
+                        <th>146300</th>
+                        <th>134280</th>
+                        <th>0</th>
+                        <th></th>
+                        <th></th>
+                        <th>0(Sp)</th>
+                        <th>0(Sp)</th>
+                        <th>0(Sp)</th>
+                        <th>0 (P)</th>
+                        <th>30400 0</th>
+                        <th>2500</th>
+                        <th>5250</th>
+                        <th>5250</th>
+                        <th>5250</th>
+                        <th>5250</th>
+                        <th>91900</th>
+                        <th>5020</th>
+                      </tr>
+                 </thead>
+              </table>
+       </div>
+       <div style="padding: 5px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+        <p>T:=Train; F:=Flight; Sp:=Supplement; A:=Assistance: P:=Portages; N:=Night Halt Charges; AT:=Air/Train Transfer; Tr:= Transfer; S:=Sightseeing; Pkg:=Package</p>  
+        <p>* = The rates entered are different from the contracted rates</p>  
+        <p># = The chosen service(s) does not exist in masters</p>  
+      </div>
+      <div
+      class="headers"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid lightgrey;">
+      <div>
+          <h1 style="text-align: center; padding: 0px; ">Escort Detail</h1>
+      </div>
+      </div>
+      <div class="table-container">
+          <table style="margin-top: 0px; border: 1px solid lightgrey">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Air /Train</th>
+                <th>Sector</th>
+                <th >Hotel</th>
+                <th>DBL</th>
+                <th>SGL</th>
+                <th>Ex-Bd</th>
+                <th>Room Type</th>
+                <th>Meal Plan</th>
+                <th>B</th>
+                <th>L</th>
+                <th>D</th>
+              </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>1:W:3Dec</td>
+                      <td></td>
+                      <td>Arrive Delhi</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>2:T:4Dec</td>
+                      <td></td>
+                      <td>2:T:4Dec</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>3:F:5Dec</td>
+                      <td></td>
+                      <td>Agra</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>4:S:6Dec</td>
+                      <td></td>
+                      <td>Agra</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>5:S:7Dec</td>
+                      <td></td>
+                      <td>Dausa / Ranthambore</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>6:M:8Dec</td>
+                      <td></td>
+                      <td>Ranthambore</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>7:T:9Dec</td>
+                      <td></td>
+                      <td>Jaipur</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>8:W:10Dec</td>
+                      <td></td>
+                      <td>Jaipur</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>9:T:11Dec</td>
+                      <td>11500(F)</td>
+                      <td>Mumbai</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>10:F:12Dec</td>
+                      <td></td>
+                      <td>Mumbai</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>11:S:13Dec</td>
+                      <td>2150(T)</td>
+                      <td>Mumbai Depart</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <thead>
+                  <tr>
+                    <th></th>
+                    <th>20000</th>
+                    <th colspan="2">Total</th>
+                    <th>0</th>
+                    <th>0</th>
+                    <th>0</th>
+                    <th></th>
+                    <th></th>
+                    <th>0(Sp)</th>
+                    <th>0(Sp)</th>
+                    <th>0(Sp)</th>
+                  </tr>
+                  </thead>
+            </table>
+          </div>
+          <div
+           class="headers"
+           style="
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border: 2px solid lightgrey;">
+           <div>
+               <h1 style="text-align: center; padding: 0px; ">Escort Service Detail</h1>
+           </div>
+        </div>
+        <div class="table-container">
+          <table style="margin-top: 0px; border: 1px solid lightgrey">
+            <thead>
+              <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Particular</th>
+                <th >Days</th>
+                <th>Pay Per Day</th>
+                <th>Total Amount</th>
+                <th>Remark</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>1:W:3Dec</td>
+                    <td>1:W:3Dec</td>
+                    <td>Delhi fees</td>
+                    <td>1</td>
+                    <td>5000</td>
+                    <td>5000</td>
+                    <td></td>
+                </tr> 
+                </tbody>
+                <tbody>
+                  <tr>
+                      <td>2:T:4Dec</td>
+                      <td>2:T:4Dec</td>
+                      <td>Delhi full day</td>
+                      <td>1</td>
+                      <td>5000</td>
+                      <td>5000</td>
+                      <td></td>
+                  </tr> 
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>3:F:5Dec</td>
+                    <td>11:S:13Dec</td>
+                    <td>Outstation</td>
+                    <td>9</td>
+                    <td>9100</td>
+                    <td>81900</td>
+                    <td></td>
+                </tr> 
+            </tbody>
+          </table>
+        </div>
+        <div
+        class="headers"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid lightgrey;">
+        <div>
+            <h1 style="text-align: center; padding: 0px; ">Air / Train Detail</h1>
+        </div>
+        </div>
+        <div class="table-container">
+          <table style="margin-top: 0px; border: 1px solid lightgrey">
+            <thead>
+              <tr>
+                <th>Sector</th>
+                <th>Name</th>               
+                <th >Departure</th>
+                <th>Arrival</th>
+                <th>Amount/Pax</th>
+                <th>Guide</th>
+                <th>Escort</th>
+                <th>Service Charge</th>
+                <th>Handling
+                  Charge</th>
+                <th>Remark</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>Jaipur - Mumbai by Flight</td>
+                    <td>6E 5235 </td>
+                    <td>12:45</td>
+                    <td>14:35</td>
+                    <td>5500 #</td>
+                    <td></td>
+                    <td>6500</td>
+                    <td>2500 #</td>
+                    <td>2500 #</td>
+                    <td></td>
+              </tbody> 
+              <tbody>
+                <tr>
+                    <td>Mumbai - Delhi by Flight</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>8500</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>
+              </tbody>
+          </table>
+          </div>
+          <div
+          class="headers"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid lightgrey;">
+          <div>
+              <h1 style="text-align: center; padding: 0px; ">Monuments</h1>
+          </div>
+          </div>
+          <div class="table-container">
+            <table style="margin-top: 0px; border: 1px solid lightgrey">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Sector</th>               
+                  <th >Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2:T:4Dec</td>
+                    <td>Delhi</td>
+                      <td>Red Fort, Raj Ghat, Drive past the Govt. Buildings, Photo stop at the India Gate, Humayun Tomb</td>
+                </tbody>
+                <tbody>
+                <tr>
+                  <td>3:F:5Dec</td>
+                  <td>Agra</td>
+                  <td>Mehtab Bagh</td>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td>4:S:6Dec</td>
+                      <td>Agra</td>
+                      <td>Taj Mahal, Agra Fort</td>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>5:S:7Dec</td>
+                    <td>Dausa</td>
+                    <td>juggad</td>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>8:W:10Dec</td>
+                  <td>8:W:10Dec</td>
+                  <td>Photo stop at the Hawa Mahal Palace, Amber Fort, City Palace</td>
+                     </tbody>
+                     <tbody>
+                       <tr>
+                         <td>10:F:12Dec</td>
+                         <td>Mumbai</td>
+                         <td>Elephanta Caves, Gateway of India, Dhobi Ghat (Photostop), Mani Bhawan, Hanging Garden, Marine drive</td>
+                   </tbody>
+            </table>
+          </div>
+          <div
+          class="headers"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid lightgrey;">
+          <div>
+              <h1 style="text-align: center; padding: 0px; ">Add On's</h1>
+          </div>
+     </div>
+     <div class="table-container">
+       <table style="margin-top: 0px; border: 1px solid lightgrey">
+         <thead>
+           <tr>
+             <th>Day</th>
+             <th>Sector</th>               
+             <th >Name</th>
+             <th >Escort</th>
+             <th >017+02</th>
+             <th >022+02</th>
+             <th >026+02</th>
+             <th >031+02</th>
+           </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>1:W:3Dec</td>
+               <td>Delhi</td>
+               <td>Mineral water+</td>
+               <td>No</td>
+               <td>11400 #</td>
+               <td>14400 #</td>
+               <td>16800 #</td>
+               <td>19800 #</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td>2:T:4Dec</td>
+               <td>Delhi</td>
+               <td>Rickshaw Ride in Old Delhi+</td>
+               <td>No</td>
+               <td>3000 *</td>
+               <td>3600 *</td>
+               <td>4200 *</td>
+               <td>5100 *</td>
+           </tbody>
+
+           <tbody>
+             <tr>
+               <td>4:S:6Dec</td>
+               <td>Agra</td>
+               <td>Marble factory visit (Agra)+</td>
+               <td>No</td>
+               <td>190 *</td>
+               <td>240 *</td>
+               <td>280 *</td>
+               <td>330 *</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td></td>
+               <td></td>
+               <td>Battery bus at Taj Mahal to and from Parking+</td>
+               <td>No</td>
+               <td>1900 #</td>
+               <td>2400 #</td>
+               <td>2800 #</td>
+               <td>3300 #</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td>5:S:7Dec</td>
+               <td>Dausa</td>
+               <td>Juggad Ride to a village+</td>
+               <td>No</td>
+               <td>12000 *</td>
+               <td>15000 *</td>
+               <td>18000 *</td>
+               <td>21000 *</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td></td>
+               <td></td>
+               <td>Organic Farm Visit+</td>
+               <td>No</td>
+               <td>4</td>
+               <td>5</td>
+               <td>6</td>
+               <td>7</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td></td>
+               <td></td>
+               <td>Lnch at the hotel +</td>
+               <td>No</td>
+               <td>17100 #</td>
+               <td>17100 #</td>
+               <td>25200 #</td>
+               <td>29700 #</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td>6:M:8Dec</td>
+               <td>Ranthambore</td>
+               <td>Morning and Afternoon Canter Safaris in Ranthambore (02 Safaris on Sharing Basis)+</td>
+               <td>No</td>
+               <td>240000 #</td>
+               <td>260000 #</td>
+               <td>260000 #</td>
+               <td>260000 #</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td>7:T:9Dec</td>
+               <td>Jaipur</td>
+               <td>Jeep ride Amber Fort[per jeep for 05 pax (including for parking)]+</td>
+               <td>No</td>
+               <td>2000 *</td>
+               <td>2500 *</td>
+               <td>3000 *</td>
+               <td>3500 *</td>
+           </tbody>
+           
+           <tbody>
+             <tr>
+               <td></td>
+               <td></td>
+               <td>Walk in Old Jaipur+</td>
+               <td>No</td>
+               <td>950 #</td>
+               <td>1200 #</td>
+               <td>1400 #</td>
+               <td>1650 #</td>
+           </tbody>
+           <tbody>
+             <tr>
+               <td>8:W:10Dec</td>
+               <td>Jaipur</td>
+               <td>Saree and Tuban Tying[1]+</td>
+               <td>No</td>
+               <td>19</td>
+               <td>24</td>
+               <td>28</td>
+               <td>33</td>
+           </tbody>
+           <tbody>
+            <tr>
+              <td>9:T:11Dec</td>
+              <td>Mumbai</td>
+              <td>Charter boat for Elephanta Caves visit+</td>
+              <td>No</td>
+              <td>26000 #</td>
+              <td>26000 #</td>
+              <td>26000 #</td>
+              <td>26000 #</td>
+          </tbody>
+            </table>
+          </div>
+          <div style="padding: 5px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+             <p>+ Service Cost Included in Total Tour Cost</p>  
+           </div>
+           <div
+           class="headers"
+           style="
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border: 2px solid lightgrey;">
+           <div>
+               <h1 style="text-align: center; padding: 0px; ">Cost Summary</h1>
+           </div>
+        </div>
+           <div class="table-container">
+             <table style="margin-top: 0px; border: 1px solid lightgrey">
+               <thead>
+                 <tr>
+                   <th>PAX/DF</th>
+                   <th>TPT(No)</th>               
+                   <th >TPT</th>
+                   <th >Hotel</th>
+                   <th >Meal</th>
+                   <th >AddOn's0</th>
+                   <th >Day Act</th>
+                   <th >Misc</th>
+                   <th >Supp</th>
+                   <th >Monu</th>
+                   <th >Guide</th>
+                   <th >F.Escort</th>
+                   <th >Escort</th>
+                   <th >TourCost</th>
+                   <th >Tour Profit</th>
+                   <th >ST 5%</th>
+                   <th >Train</th>
+                   <th >Guide Fare</th>
+                   <th >Comm</th>
+                   <th >Sale Price</th>
+                   <th >NET in  USD</th>
+                   <th >Grand Total in USD</th>
+                   <th >Air in USD</th>
+                   <th >Total in USD</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <td>017+02/17</td>
+                     <td>AC
+                        Volvo (1)</td>
+                     <td>18029</td>
+                     <td>73150</td>
+                     <td>0</td>
+                     <td>16556</td>
+                     <td>0</td>
+                     <td>0</td>
+                     <td>0</td>
+                     <td>5020</td>
+                     <td>309</td>
+                     <td>4591</td>
+                     <td>6435</td>
+                     <td>124090</td>
+                     <td>13502</td>
+                     <td>6880</td>
+                     <td>0</td>
+                     <td>0</td>
+                     <td>0</td>
+                     <td>144472</td>
+                     <td>1817</td>
+                     <td>1817</td>
+                     <td>132</td>
+                     <td>1949</td>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                      <td>022+02/22</td>
+                      <td>AC
+                         Volvo (1)</td>
+                      <td>13932</td>
+                      <td>73150</td>
+                      <td>0</td>
+                      <td>14457</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>5020</td>
+                      <td>239</td>
+                      <td>3138</td>
+                      <td>4973</td>
+                      <td>114909</td>
+                      <td>12319</td>
+                      <td>6361</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>133589</td>
+                      <td>1680</td>
+                      <td>1680</td>
+                      <td>132</td>
+                      <td>1812</td>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td>026+02/26</td>
+                      <td>AC
+                         Volvo (1)</td>
+                      <td>11788</td>
+                      <td>11788</td>
+                      <td>0</td>
+                      <td>12776</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>5020</td>
+                      <td>202</td>
+                      <td>2886</td>
+                      <td>4208</td>
+                      <td>110030</td>
+                      <td>110030</td>
+                      <td>110030</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>127756</td>
+                      <td>1607</td>
+                      <td>1607</td>
+                      <td>132</td>
+                      <td>1739</td>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td>031+02/31</td>
+                      <td>AC
+                         Volvo (1)</td>
+                      <td>9887</td>
+                      <td>73150</td>
+                      <td>0</td>
+                      <td>11225</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>5020</td>
+                      <td>169</td>
+                      <td>2421</td>
+                      <td>3529</td>
+                      <td>105401</td>
+                      <td>11036</td>
+                      <td>5822</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>122259</td>
+                      <td>1538</td>
+                      <td>1538</td>
+                      <td>132</td>
+                      <td>1670</td>
+                  </tbody>
+             </table>
+           </div>
+           <div style="padding: 5px; border: 1px solid lightgrey;  background-color: #f9f9f9; font-size: 0.75rem ">
+            <p>Supplement cost for Single Room (SRS): 70605 INR (888 (USD)); Reduction cost for Triple Share Room (TRR): 0 INR (0 (USD)).</p>  
+            <p>Accommodation cost made on twin share basis.</p>  
+            <p>Total Sale Cost: No Pax Detail Available</p>
+          </div>
+          <div class="table-container">
+            <table style="margin-top: 0px; border: 1px solid lightgrey ; padding-left: 15px;">
+              <thead>
+                <tr>
+                  <th>Margin Calculated on Cost Price; Hotel:=10%; Transport:=20%; Meal:=10%; Guide:=10%; Escort:=10%; Others:=10%; Allow Margin As Package :=No. <br>* As Supplement.</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+           
+
+
+
+    </div>
+  </body>
+</html>

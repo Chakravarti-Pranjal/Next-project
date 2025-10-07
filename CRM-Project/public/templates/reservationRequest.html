@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Preview Page</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: white;
+        font-size: 14px;
+      }
+
+      .preview-header {
+        background-color: #342221;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .info-section {
+        margin: 15px 0;
+        font-size: 14px;
+      }
+
+      .info-label {
+        font-weight: bold;
+      }
+
+      .query-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .query-id {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 10px;
+      }
+
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 4px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #555;
+        color: white;
+        text-align: center;
+      }
+
+      .button-row {
+        margin-top: 20px;
+        display: flex;
+        justify-content: right;
+      }
+
+      .button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .send-btn {
+        background-color: red;
+        color: white;
+      }
+
+      .cancel-btn {
+        background-color: #ddd;
+      }
+
+      textarea {
+        width: 100%;
+        height: 150px;
+        margin-top: 15px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .button1 {
+        background-color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 20px;
+        border: 1px solid #ccc;
+        padding: 5px;
+      }
+
+      .copy {
+        margin-right: 20px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+        font-size: 14px;
+      }
+
+      .ck-editor__editable {
+        min-height: 200px;
+        font-size: 14px;
+      }
+
+      .subject {
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      .subject strong {
+        margin-right: 5px;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
+      .subjects {
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="notification" id="copyNotification">Copied to clipboard!</div>
+    <div id="contentToCopy">
+      <div class="preview-header">PREVIEW</div>
+
+      <div class="info-section">
+        <span class="info-label">Client:</span> John Doe &nbsp;&nbsp;
+        <span class="info-label">Operation Person:</span> Jane Smith
+        &nbsp;&nbsp; <span class="info-label">Sales Person:</span> Robert Brown
+        &nbsp;&nbsp; <span class="info-label">Group:</span> Adventure Group
+      </div>
+
+      <div class="subject"><strong>Subject:</strong> Q12345 John Doe</div>
+      <p>Destination:</p>
+
+      <div class="query-box" id="contentToCopys">
+        <div class="query-id">
+          QueryId:
+          <span id="queryId" style="color: #000; font-weight: bold"
+            >Q12345</span
+          >
+        </div>
+
+        <div id="editor">
+          <p>Dear John Doe,</p>
+          <p>
+            Thank you for your inquiry (Q12345). We are pleased to assist with
+            your travel plans for 10 passengers (Business Type: Leisure).
+          </p>
+          <p>Please find the details below.</p>
+        </div>
+
+        <div style="border: 1px dashed #999; padding: 10px; margin: 10px">
+          <!-- Header Section -->
+          <div
+            style="
+              border-bottom: 1px dashed #999;
+              padding-bottom: 10px;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <div style="width: 20%; padding-right: 10px">
+              <div style="display: flex; align-items: center">
+                <div
+                  style="
+                    background-color: #333;
+                    color: white;
+                    padding: 5px;
+                    font-weight: bold;
+                    display: inline-block;
+                  "
+                >
+                  <span style="font-size: 14px">De</span>
+                </div>
+                <div
+                  style="
+                    background-color: #f8c300;
+                    color: #333;
+                    padding: 5px;
+                    font-weight: bold;
+                    display: inline-block;
+                  "
+                >
+                  <span style="font-size: 14px">Box</span>
+                </div>
+              </div>
+              <div style="font-size: 8px; margin-top: 2px; color: #666">
+                IT | Design | Consulting
+              </div>
+            </div>
+            <div style="width: 10%; text-align: center">
+              <div
+                style="
+                  border-left: 1px solid #ccc;
+                  height: 50px;
+                  margin-left: 10px;
+                "
+              ></div>
+            </div>
+            <div style="width: 70%">
+              <div style="font-weight: bold; color: #555; font-size: 12px">
+                Debox Global IT Solutions Pvt Ltd
+              </div>
+              <div style="font-size: 9px; color: #666; margin-top: 5px">
+                Office : 315, Tower C, IThum, Sector 62, Noida 201301 India<br />
+                +91-9-999-999-999 | info@deboxglobal.com | www.deboxglobal.com
+              </div>
+            </div>
+          </div>
+
+          <!-- Title Section -->
+          <div
+            style="
+              text-align: center;
+              padding: 10px 0;
+              border-bottom: 1px dashed #999;
+              font-weight: bold;
+              color: #333;
+              font-size: 11px;
+            "
+          >
+            Hotel Reservation Request
+          </div>
+
+          <!-- To Section -->
+          <div style="display: flex; margin-top: 10px">
+            <div style="width: 50%; padding-right: 10px">
+              <table
+                style="
+                  width: 100%;
+                  border-collapse: collapse;
+                  border: 1px dashed #999;
+                "
+              >
+                <tr>
+                  <td style="padding: 5px; font-weight: bold">
+                    To:
+                    <span>Hotel Comfort Zone</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px">
+                    <b>Address :</b> E586 Masjid N Road Block E Greater Kailash
+                    II Greater Kailash New Delhi Pin Code : 110048
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px"><b>Contact Person :</b> None</td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px"><b>Phone :</b></td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px"><b>Email :</b></td>
+                </tr>
+              </table>
+            </div>
+            <div style="width: 50%">
+              <table
+                style="
+                  width: 100%;
+                  border-collapse: collapse;
+                  border: 1px dashed #999;
+                "
+              >
+                <tr>
+                  <td style="padding: 5px"><b>Tour No :</b> 25/05/0010/012</td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px">
+                    <b>Booking No :</b> DB25-26/000011
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px"><b>Date :</b> 06-05-2025</td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px">
+                    <b>Lead Pax / Client Name :</b> Shadab
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 5px"><b>Total Pax :</b> 4</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Letter Section -->
+          <div style="margin-top: 20px">
+            <p><b>The Reservation Manager,</b></p>
+            <p>Dear Sir / Madam,</p>
+            <p>
+              Please book and confirm accommodation for the above mentioned
+              client/s as per details below :
+            </p>
+          </div>
+
+          <!-- Hotel Details Section -->
+          <div style="margin-top: 10px">
+            <div style="font-weight: bold">Hotel Comfort Zone :-</div>
+            <div style="margin-top: 5px">
+              <b>Address:</b> E586 Masjid N Road Block E Greater Kailash II
+              Greater Kailash New Delhi Pin Code : 110048
+            </div>
+            <div style="margin-top: 5px">
+              <b>Website URL:</b>
+              <span>http://hotelcomfortzone.com</span>
+            </div>
+            <table
+              style="width: 100%; margin-top: 10px; border-collapse: collapse"
+            >
+              <tr>
+                <td
+                  style="
+                    width: 20%;
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    background-color: #f5f5f5;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  Contact Person:
+                </td>
+                <td
+                  style="
+                    width: 30%;
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    text-align: center;
+                  "
+                >
+                  Unknown
+                </td>
+                <td
+                  style="
+                    width: 20%;
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    background-color: #f5f5f5;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  Phone:
+                </td>
+                <td
+                  style="
+                    width: 30%;
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    text-align: center;
+                  "
+                >
+                  7677749075
+                </td>
+              </tr>
+              <tr>
+                <td
+                  colspan="2"
+                  style="
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    background-color: #f5f5f5;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  Email:
+                </td>
+                <td
+                  colspan="2"
+                  style="
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    text-align: center;
+                  "
+                >
+                  rishi@gmail.com
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Reservation Details Table -->
+          <div style="margin-top: 20px">
+            <table
+              style="
+                width: 100%;
+                border-collapse: collapse;
+                border: 1px dashed #999;
+              "
+            >
+              <tr
+                style="
+                  background-color: #f5f5f5;
+                  font-weight: bold;
+                  text-align: center;
+                "
+              >
+                <td style="border: 1px dashed #999; padding: 5px">Date(s)</td>
+                <td style="border: 1px dashed #999; padding: 5px">Nights</td>
+                <td style="border: 1px dashed #999; padding: 5px">Place</td>
+                <td style="border: 1px dashed #999; padding: 5px">Hotel</td>
+                <td style="border: 1px dashed #999; padding: 5px">Unit</td>
+                <td style="border: 1px dashed #999; padding: 5px">
+                  Status Details
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px dashed #999; padding: 5px">
+                  06 May 2025- 07 May 2025
+                </td>
+                <td
+                  style="
+                    border: 1px dashed #999;
+                    padding: 5px;
+                    text-align: center;
+                  "
+                >
+                  1
+                </td>
+                <td style="border: 1px dashed #999; padding: 5px">Delhi</td>
+                <td style="border: 1px dashed #999; padding: 5px">
+                  Hotel Comfort Zone
+                </td>
+                <td style="border: 1px dashed #999; padding: 5px">
+                  2 SGL,<br />
+                  1 DBL,<br />
+                  2 TPL,<br />
+                  1 TWIN,<br />
+                  2 CWBed,
+                </td>
+                <td style="border: 1px dashed #999; padding: 5px">
+                  <div style="text-align: center; font-weight: bold">
+                    Status
+                  </div>
+                  <div style="height: 20px"></div>
+                  <div style="text-align: center; font-weight: bold">
+                    Reference
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Check-in/out Details -->
+          <div style="margin-top: 10px; display: flex">
+            <div style="width: 60%; border: 1px dashed #999; padding: 5px">
+              <b>CheckIn :</b> 06 May 2025 , <b>CheckOut :</b> 07 May 2025
+            </div>
+            <div style="width: 20%; border: 1px dashed #999; padding: 5px">
+              <b>Room Type :</b> Deluxe room
+            </div>
+            <div style="width: 20%; border: 1px dashed #999; padding: 5px">
+              <b>Meal Plan :</b> MAP
+            </div>
+          </div>
+
+          <!-- Closing Section -->
+          <div
+            style="margin-top: 20px; padding: 10px; border-top: 1px dashed #999"
+          >
+            <p>
+              Your confirmation for the above requested accommodation on
+              <span style="text-decoration: underline; color: red"
+                >this mail</span
+              >
+              shall be highly appreciated.
+            </p>
+            <p>Thanking you</p>
+            <p>With warm regards,</p>
+          </div>
+
+          <!-- Disclaimer Section -->
+          <div
+            style="
+              margin-top: 20px;
+              font-size: 9px;
+              color: #666;
+              border-top: 1px dashed #999;
+              padding-top: 10px;
+            "
+          >
+            <p>
+              Please inform us in advance if there is any renovation or
+              disruption or any description of any service like closure of
+              swimming pool, restaurant, renovation impediments/hindrances in
+              public areas, roads, etc. planned at your hotel during the stay of
+              our above client, to minimize complaints and compensation to
+              clients.
+            </p>
+            <p>
+              This is a computer generated request and does not require a
+              signature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button class="copy" id="copyButton">Copy</button>
+      <button class="button1 send-btn" id="outlookButton">
+        <img src="microsoft-outlook-icon.png" alt="microsoft-outlook-icon" />
+      </button>
+      <button class="button send-btn" onclick="sendMail()">Send</button>
+    </div>
+
+    <script>
+      let editor; // Global variable to store the CKEditor instance
+      const contactEmail = "client@example.com"; // Static email address
+
+      function showNotification() {
+        const notification = document.getElementById("copyNotification");
+        notification.style.display = "block";
+        setTimeout(() => {
+          notification.style.display = "none";
+        }, 2000);
+      }
+
+      function copyToClipboard() {
+        const contentToCopy = document.getElementById("contentToCopy");
+        const range = document.createRange();
+        range.selectNode(contentToCopy);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+
+        try {
+          const successful = document.execCommand("copy");
+          if (successful) {
+            showNotification();
+          } else {
+            alert("Failed to copy content. Please try again.");
+          }
+        } catch (err) {
+          alert("Error copying content: " + err);
+        }
+
+        window.getSelection().removeAllRanges();
+      }
+
+      function openInOutlook() {
+        if (!contactEmail) {
+          alert("No email address found to send to!");
+          return;
+        }
+
+        const clientName = "John Doe";
+        const operationPerson = "Jane Smith";
+        const salesPerson = "Robert Brown";
+        const groupName = "Adventure Group";
+        const subjectDisplay = "Q12345 John Doe";
+        const queryId = "Q12345";
+        const messageContent = editor
+          ? editor.getData()
+          : document.getElementById("editor").innerHTML;
+        const adult = "6";
+        const child = "3";
+        const infant = "1";
+
+        const destinationsText = `
+        <li>2025-08-01 - Paris</li>
+        <li>2025-08-03 - London</li>
+      `;
+
+        const htmlContent = `
+        <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; }
+            table { border-collapse: collapse; margin-bottom: 15px; }
+            th, td { border: 1px solid #999; padding: 8px; text-align: center; }
+            th { background-color: #555; color: white; }
+            .header { font-weight: bold; margin-bottom: 5px; }
+          </style>
+        </head>
+        <body>
+          <div class="header">Client: ${clientName}</div>
+          <div class="header">Operation Person: ${operationPerson}</div>
+          <div class="header">Sales Person: ${salesPerson}</div>
+          <div class="header">Group: ${groupName}</div>
+          <div class="header">Query ID: ${queryId}</div>
+          
+          <hr>
+          
+          ${messageContent}
+          
+          <h3>Passenger Details</h3>
+          <table>
+            <tr>
+              <th>Subject</th>
+              <th>Adult</th>
+              <th>Child</th>
+              <th>Infant</th>
+            </tr>
+            <tr>
+              <td>${queryId}</td>
+              <td>${adult}</td>
+              <td>${child}</td>
+              <td>${infant}</td>
+            </tr>
+          </table>
+          
+          <h3>Destinations</h3>
+          <ul>
+            ${destinationsText}
+          </ul>
+        </body>
+        </html>
+      `;
+
+        const subject = encodeURIComponent(queryId);
+        const body = encodeURIComponent(htmlContent);
+        const mailtoLink = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Initialize CKEditor
+        ClassicEditor.create(document.querySelector("#editor"))
+          .then((instance) => {
+            editor = instance;
+            editor.setData(`
+            <div style="margin-top: 20px; padding: 10px; font-size: 9px;">
+      <p><b>The Reservation Manager,</b></p>
+      <p>Dear Sir / Ma'am,</p>
+      <p>
+        Greeting from
+        <span style="text-decoration: underline; color: red"
+          >Debox Global IT Solution pvt ltd.</span
+        >
+      </p>
+      <p>
+        We are pleased to send our Hotel Availability for
+        <span style="text-decoration: underline; color: red">reservation</span>
+        request for the
+        <span style="text-decoration: underline; color: red">subjected</span>
+        booking below
+      </p>
+      <p>Please confirm the availability and send us a written confirmation.</p>
+      <p>
+        You can print this
+        <span style="text-decoration: underline; color: red">mail</span> or
+        choose to download it for your reference.
+      </p>
+      <p>
+        Please acknowledge this mail and kindly press REPLY ALL when doing the
+        same.
+      </p>
+      <p>
+        Please book and confirm accommodation for the above mentioned client/s
+        as per details below :
+      </p>
+    </div>
+          `);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+
+        // Add click event to copy button
+        document
+          .getElementById("copyButton")
+          .addEventListener("click", copyToClipboard);
+
+        // Add click event to Outlook button
+        document
+          .getElementById("outlookButton")
+          .addEventListener("click", openInOutlook);
+      });
+
+      function sendMail() {
+        const emailId = contactEmail;
+        if (!emailId) {
+          alert("No email address found to send to!");
+          return;
+        }
+
+        const emailBody = editor
+          ? editor.getData()
+          : document.getElementById("editor").innerHTML;
+
+        const payload = {
+          ConfigId: "8",
+          MailType: "3",
+          To: emailId,
+          Subject: "Q12345",
+          Body: emailBody,
+          Attachment: "s",
+        };
+
+        fetch("send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then(() => alert("Email sent successfully!"))
+          .catch((error) => {
+            console.error("Error sending email:", error);
+            alert("Failed to send email. Please try again.");
+          });
+      }
+    </script>
+  </body>
+</html>

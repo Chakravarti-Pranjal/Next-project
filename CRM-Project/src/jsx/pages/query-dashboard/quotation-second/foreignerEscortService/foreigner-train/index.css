@@ -1,0 +1,32 @@
+/* .custom-time-picker .react-time-picker {
+  border: 2px solid #ff5722;
+  border-radius: 10px;
+  background-color: #e0f7fa;
+}
+
+.custom-time-picker .react-time-picker__inputGroup__input {
+  font-size: 12px;
+  color: #00796b;
+}
+
+.custom-time-picker .react-time-picker__clock-button {
+  background-color: #ff5722;
+  color: #fff;
+} */
+.react-time-picker__wrapper{
+    width: 50px;
+}
+.react-time-picker__inputGroup__amPm {
+    display: none;
+}
+.react-time-picker__button svg {
+  display: inherit;
+  height: 10px;
+  width: 10px;
+}
+.react-time-picker {
+  display: inline-flex;
+  position: relative;
+  width: 90px;
+  height: 21px;
+}

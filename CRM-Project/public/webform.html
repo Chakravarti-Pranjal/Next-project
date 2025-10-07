@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Enquiry Form with Slider</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+
+        .main-container {
+            margin: 0 auto;
+            width: 100%;
+            padding: 0px 0px;
+            display: flex;
+            align-items: stretch;
+            gap: 20px;
+            height: 100vh;
+        }
+
+        .slider-block {
+            width: 50%;
+            height: 100vh;
+        }
+
+        .slider-container {
+            height: 100%;
+        }
+
+        .slider-container .slick-slide {
+            height: 100vh;
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .form-container {
+            width: 50%;
+            max-width: none;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-group-single {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        textarea,
+        .days-input,
+        #travel-date-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-wrap {
+            display: flex;
+            gap: 10px;
+            justify-content: end;
+        }
+
+        .btn{
+            width: fit-content !important;
+        }
+
+        .btn-submit,
+        .btn-reset {
+            width: 100%;
+            padding: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-submit {
+            background: #008080;
+            color: #fff;
+        }
+
+        .btn-reset {
+            background: #ccc;
+            color: #333;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        #travel-date-input[readonly] {
+            background: #f7f7f7;
+            cursor: pointer;
+        }
+
+        .days-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .days-input {
+            width: 60px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .days-btn {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .days-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+        }
+
+        .dayWrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .dayWrap label {
+            margin-bottom: 0;
+        }
+
+        #days-checkbox {
+            cursor: pointer;
+        }
+
+        .ui-datepicker {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Slider -->
+        <div class="slider-block">
+            <div class="slider-container">
+                <div><img src="slide1.jpg" alt="Slide 1"></div>
+                <div><img src="slide2.png" alt="Slide 2"></div>
+                <div><img src="slide3.png" alt="Slide 3"></div>
+                <div><img src="slide4.jpg" alt="Slide 4"></div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="form-container">
+            <!-- <h2>Plan Your Trip</h2> -->
+            <div class="form-group">
+                <div style="flex:1">
+                    <label>First Name*</label>
+                    <input type="text" id="first-name" placeholder="Your First Name">
+                </div>
+                <div style="flex:1">
+                    <label>Last Name</label>
+                    <input type="text" id="last-name" placeholder="Your Last Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div style="flex:1">
+                    <label>Contact Number*</label>
+                    <input type="text" id="contact" placeholder="Mobile Number to contact you">
+                </div>
+                <div style="flex:1">
+                    <label>Email Address*</label>
+                    <input type="email" id="email" placeholder="Valid Email Address">
+                </div>
+            </div>
+            <label>Travel Date <span style="color:red">*</span></label>
+            <div class="form-group-single">
+                <input type="text" id="travel-date-input" placeholder="Select Travel Date" readonly>
+            </div>
+            <div class="dayWrap">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="days-checkbox">
+                    <label for="days-checkbox">Flexible Date</label>
+                </div>
+
+                <div class="days-group" style="display: none;">
+                    <label>No Of Days*</label>
+                    <button class="days-btn" id="decrement">-</button>
+                    <input type="number" class="days-input" id="days-input" value="1" min="1" readonly>
+                    <button class="days-btn" id="increment">+</button>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <div style="flex:1">
+                    <label>Number Of Adults*</label>
+                    <select id="adults">
+                        <option>Select Adults</option>
+                        <option>1 Adult</option>
+                        <option>2 Adults</option>
+                        <option>3 Adults</option>
+                    </select>
+                </div>
+                <div style="flex:1">
+                    <label>Number Of Childs</label>
+                    <select id="childs">
+                        <option>Select Child</option>
+                        <option>1 Child</option>
+                        <option>2 Childs</option>
+                        <option>3 Childs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-single">
+                <label>Your Message</label>
+                <textarea id="description" placeholder="Write here about your Enquiry!"></textarea>
+            </div>
+
+            <div class="btn-wrap">
+                <button class="btn btn-submit">PLAN YOUR TRIP NOW</button>
+                <button class="btn btn-reset">RESET FORM</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slider-container').slick({
+                dots: false,
+                infinite: true,
+                speed: 600,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: false,
+                fade: true
+            });
+
+            let selectedDate = "";
+            $("#travel-date-input").datepicker({
+                dateFormat: "dd-mm-yy",
+                minDate: 0,
+                onSelect: function (dateText) {
+                    selectedDate = dateText;
+                    $(this).val(dateText);
+                    $(".days-group").show();
+                }
+            });
+
+            $("#days-checkbox").on("change", function () {
+                if ($(this).is(":checked")) {
+                    $("#travel-date-input").val("Anytime");
+                    $(".days-group").show();
+                } else {
+                    $("#travel-date-input").val(selectedDate);
+                    if (selectedDate) {
+                        $(".days-group").show();
+                    } else {
+                        $(".days-group").hide();
+                    }
+                }
+            });
+
+            let days = 1;
+            $("#increment").on("click", function () {
+                days++;
+                $("#days-input").val(days);
+            });
+            $("#decrement").on("click", function () {
+                if (days > 1) {
+                    days--;
+                    $("#days-input").val(days);
+                }
+            });
+
+            $(".btn-reset").on("click", function () {
+                $("input, select, textarea").val("");
+                $("#days-checkbox").prop("checked", false);
+                $(".days-group").hide();
+                $("#days-input").val(1);
+                days = 1;
+                selectedDate = "";
+            });
+
+            $(".btn-submit").on("click", function (e) {
+                e.preventDefault();
+
+                const firstName = $("#first-name").val().trim();
+                const lastName = $("#last-name").val().trim();
+                const contactNumber = $("#contact").val().trim();
+                const emailAddress = $("#email").val().trim();
+                const travelDateValue = $("#days-checkbox").is(":checked") ? "Anytime" : $("#travel-date-input").val();
+                const noOfDays = parseInt($("#days-input").val());
+                const noOfAdults = $("#adults").val().replace(/\D/g, '') || 0;
+                const noOfChilds = $("#childs").val().replace(/\D/g, '') || 0;
+                const description = $("#description").val().trim();
+
+                // Basic validation
+                if (!firstName || !contactNumber || !emailAddress || (!travelDateValue && travelDateValue !== "Anytime")) {
+                    Swal.fire("Error", "Please fill all required fields!", "error");
+                    return;
+                }
+
+                let formattedDate = "";
+                if (travelDateValue !== "Anytime" && travelDateValue) {
+                    const [day, month, year] = travelDateValue.split("-");
+                    formattedDate = `${year}-${month}-${day}`;
+                }
+
+                const requestData = {
+                    id: "",
+                    FirstName: firstName,
+                    LastName: lastName,
+                    ContactNumber: contactNumber,
+                    EmailAddress: emailAddress,
+                    TravelDate: travelDateValue === "Anytime" ? "Anytime" : formattedDate,
+                    NoOfDays: noOfDays,
+                    NoOfAdults: parseInt(noOfAdults),
+                    NoOfChilds: parseInt(noOfChilds),
+                    Description: description,
+                    Status: 1,
+                    AddedBy: 101
+                };
+
+                Swal.fire({
+                    title: "Submitting...",
+                    text: "Please wait",
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                fetch("https://devapi.nexgenov8.com/api/add-update-lead-form", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(requestData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        Swal.fire("Success!", "Your enquiry has been submitted successfully!", "success");
+                        $(".btn-reset").trigger("click");
+                    })
+                    .catch(error => {
+                        Swal.fire("Error", "Failed to submit. Please try again!", "error");
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

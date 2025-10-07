@@ -1,0 +1,184 @@
+.card-container {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.service-card {
+  background-color: #222;
+  color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.service-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #333;
+}
+
+.supplier-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.supplier-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.supplier-name {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.payment-info {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.reservation-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-button {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reservation-button:hover {
+  background-color: #357abd;
+}
+
+.service-body {
+  padding: 12px;
+}
+
+.table-container {
+  width: 100%;
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+}
+
+.table-cell {
+  padding: 8px;
+  border: 1px solid #333;
+  font-size: 14px;
+  color: #fff;
+}
+
+.status-select {
+  padding: 0;
+}
+
+.status-dropdown {
+  width: 100%;
+  padding: 6px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.date-room-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.special-request {
+  margin-top: 12px;
+}
+
+.form-control {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 14px;
+  width: 15rem;
+  height: 25px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.confirmation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  margin-top: 12px;
+}
+
+.button-cell {
+  padding: 8px;
+  text-align: center;
+}
+
+.edit-button,
+.cancel-button,
+.save-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: #357abd;
+}
+
+.cancel-button {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.cancel-button:hover {
+  background-color: #c9302c;
+}
+
+.save-button {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+.save-button:hover {
+  background-color: #4cae4c;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.height-25 {
+  height: 25px;
+}
